@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kedar Estates & Investments — Premium Gurugram Properties</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:      #0D1F3C;
+  --royal:     #1A3D8F;
+  --blue:      #2563EB;
+  --blue-mid:  #3B82F6;
+  --sky:       #60A5FA;
+  --ice:       #EFF6FF;
+  --ice-dark:  #DBEAFE;
+  --white:     #FFFFFF;
+  --slate:     #F8FAFF;
+  --text-dark: #0D1F3C;
+  --text-mid:  #374151;
+  --text-soft: #6B7280;
+  --border:    #E5EEFF;
+  --gold:      #F59E0B;
+  --serif:     'DM Serif Display', Georgia, serif;
+  --sans:      'DM Sans', system-ui, sans-serif;
+  --radius:    10px;
+  --shadow:    0 1px 3px rgba(13,31,60,.08), 0 4px 16px rgba(13,31,60,.06);
+  --shadow-lg: 0 8px 32px rgba(13,31,60,.14);
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body { font-family:var(--sans); color:var(--text-dark); background:var(--white); line-height:1.6; }
+img  { display:block; max-width:100%; }
+a    { text-decoration:none; color:inherit; }
+button { cursor:pointer; font-family:var(--sans); }
+
+/* ── TICKER ── */
+.ticker { background:var(--ice-dark); border-bottom:1px solid var(--border); overflow:hidden; white-space:nowrap; height:34px; display:flex; align-items:center; }
+.ticker-inner { display:inline-flex; gap:0; animation:tick 40s linear infinite; }
+.ticker-item { font-size:12px; color:var(--royal); font-weight:500; padding:0 28px; border-right:1px solid var(--border); display:flex; align-items:center; gap:7px; height:34px; }
+.ticker-dot { width:5px; height:5px; border-radius:50%; background:var(--blue); flex-shrink:0; }
+@keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── NAV ── */
+.nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,.97); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
+.nav-inner { max-width:1200px; margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.nav-logo { display:flex; align-items:center; gap:10px; }
+.nav-logo-icon { width:36px; height:36px; background:var(--navy); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.nav-logo-icon svg { width:20px; height:20px; }
+.nav-logo-wordmark { display:flex; flex-direction:column; }
+.nav-logo-wordmark span:first-child { font-family:var(--serif); font-size:17px; line-height:1; color:var(--navy); }
+.nav-logo-wordmark span:last-child  { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-soft); margin-top:2px; }
+.nav-links { display:flex; align-items:center; gap:28px; }
+.nav-links a { font-size:13.5px; font-weight:500; color:var(--text-mid); transition:color .15s; }
+.nav-links a:hover { color:var(--blue); }
+.nav-rera { font-size:10px; color:var(--text-soft); border:1px solid var(--border); border-radius:20px; padding:3px 10px; display:none; }
+.nav-cta { background:var(--blue); color:var(--white); font-size:13px; font-weight:500; padding:9px 20px; border-radius:var(--radius); border:none; transition:background .15s; }
+.nav-cta:hover { background:var(--royal); }
+
+/* ── HERO ── */
+.hero { background:var(--navy); position:relative; overflow:hidden; padding:64px 24px 0; min-height:460px; }
+.hero::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 60% 80% at 110% 50%, rgba(37,99,235,.25) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at -10% 80%, rgba(96,165,250,.12) 0%, transparent 60%); pointer-events:none; }
+.hero-grid { position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px); background-size:48px 48px; pointer-events:none; }
+.hero-inner { max-width:1200px; margin:0 auto; position:relative; z-index:1; }
+.hero-badge { display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); color:var(--sky); font-size:12px; font-weight:500; padding:5px 14px; border-radius:20px; margin-bottom:22px; }
+.hero-badge-dot { width:6px; height:6px; border-radius:50%; background:#22C55E; animation:pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(1.3)} }
+.hero h1 { font-family:var(--serif); font-size:48px; color:var(--white); line-height:1.12; max-width:580px; margin-bottom:14px; }
+.hero h1 em { font-style:italic; color:var(--sky); }
+.hero-sub { font-size:15px; color:rgba(255,255,255,.6); max-width:440px; line-height:1.7; margin-bottom:36px; }
+.hero-stats { display:flex; gap:40px; margin-bottom:52px; flex-wrap:wrap; }
+.hero-stat-val { font-family:var(--serif); font-size:26px; color:var(--white); }
+.hero-stat-lbl { font-size:11px; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.8px; margin-top:2px; }
+.hero-rera { font-size:10.5px; color:rgba(255,255,255,.3); margin-top:8px; }
+
+/* ── SEARCH BOX ── */
+.search-wrap { padding:0 24px; margin-top:-28px; position:relative; z-index:10; }
+.search-box { max-width:1000px; margin:0 auto; background:var(--white); border-radius:14px; padding:20px 22px; box-shadow:var(--shadow-lg); border:1px solid var(--border); }
+.search-tabs { display:flex; gap:4px; margin-bottom:16px; flex-wrap:wrap; }
+.stab { padding:6px 16px; font-size:13px; font-weight:500; border-radius:8px; border:1px solid var(--border); background:var(--slate); color:var(--text-soft); cursor:pointer; transition:all .15s; }
+.stab.active { background:var(--navy); color:var(--white); border-color:var(--navy); }
+.search-row { display:grid; grid-template-columns:1fr 1fr 1fr 1fr auto; gap:10px; align-items:end; }
+.sfield label { font-size:10px; font-weight:600; color:var(--text-soft); text-transform:uppercase; letter-spacing:.8px; display:block; margin-bottom:5px; }
+.sfield input, .sfield select {
+  width:100%; padding:9px 12px; font-size:14px; font-family:var(--sans);
+  border:1px solid var(--border); border-radius:8px; background:var(--white);
+  color:var(--text-dark); outline:none; transition:border-color .15s;
+}
+.sfield input:focus, .sfield select:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(37,99,235,.1); }
+.search-btn { background:var(--blue); color:var(--white); border:none; padding:10px 24px; border-radius:8px; font-size:14px; font-weight:500; white-space:nowrap; transition:background .15s; }
+.search-btn:hover { background:var(--royal); }
+
+/* ── SECTION ── */
+.section { padding:56px 24px; }
+.section-inner { max-width:1200px; margin:0 auto; }
+.section-header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:28px; gap:16px; }
+.section-title { font-family:var(--serif); font-size:28px; color:var(--navy); }
+.section-sub { font-size:14px; color:var(--text-soft); margin-top:4px; }
+.view-all { font-size:13px; font-weight:500; color:var(--blue); white-space:nowrap; }
+.view-all:hover { text-decoration:underline; }
+
+/* ── LOCALITIES ── */
+.loc-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:10px; }
+.loc-card { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:16px 12px; text-align:center; cursor:pointer; transition:all .15s; }
+.loc-card:hover { border-color:var(--blue); box-shadow:0 0 0 3px rgba(37,99,235,.08); transform:translateY(-2px); }
+.loc-card.active { background:var(--ice); border-color:var(--blue); }
+.loc-emoji { font-size:22px; margin-bottom:8px; display:block; }
+.loc-name { font-size:13px; font-weight:500; color:var(--text-dark); }
+.loc-count { font-size:11px; color:var(--text-soft); margin-top:3px; }
+
+/* ── FILTER BAR ── */
+.filter-bar { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px; align-items:center; }
+.fbtn { font-size:12px; font-weight:500; padding:5px 14px; border-radius:20px; border:1px solid var(--border); background:var(--white); color:var(--text-soft); cursor:pointer; transition:all .15s; }
+.fbtn:hover { border-color:var(--blue-mid); color:var(--blue); }
+.fbtn.active { background:var(--ice); border-color:var(--blue); color:var(--blue); }
+.results-bar { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; }
+.results-count { font-size:13.5px; color:var(--text-soft); }
+.sort-sel { font-size:13px; font-family:var(--sans); color:var(--text-mid); background:var(--white); border:1px solid var(--border); border-radius:8px; padding:6px 12px; cursor:pointer; }
+
+/* ── PROPERTY GRID ── */
+.prop-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:18px; }
+.prop-card { background:var(--white); border:1px solid var(--border); border-radius:14px; overflow:hidden; cursor:pointer; transition:all .18s; }
+.prop-card:hover { box-shadow:var(--shadow-lg); border-color:var(--ice-dark); transform:translateY(-3px); }
+.card-img { position:relative; height:186px; overflow:hidden; background:var(--ice); }
+.card-img-emoji { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:52px; opacity:.18; }
+.card-img-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(13,31,60,.55) 0%, transparent 55%); }
+.card-badge { position:absolute; top:10px; left:10px; font-size:10px; font-weight:600; padding:3px 10px; border-radius:20px; letter-spacing:.4px; }
+.badge-new    { background:var(--blue);  color:#fff; }
+.badge-resale { background:var(--navy);  color:var(--sky); }
+.badge-hot    { background:#DC2626; color:#fff; }
+.badge-rera   { position:absolute; top:10px; right:10px; background:rgba(255,255,255,.15); backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,.25); color:#fff; font-size:9px; font-weight:600; padding:3px 8px; border-radius:4px; letter-spacing:.5px; }
+.card-body { padding:14px 16px; }
+.card-name { font-family:var(--serif); font-size:17px; color:var(--navy); margin-bottom:4px; }
+.card-loc { font-size:12px; color:var(--text-soft); display:flex; align-items:center; gap:4px; margin-bottom:12px; }
+.card-chips { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
+.chip { font-size:11px; background:var(--ice); color:var(--blue); border-radius:5px; padding:3px 9px; font-weight:500; }
+.card-foot { display:flex; align-items:center; justify-content:space-between; padding-top:12px; border-top:1px solid var(--border); }
+.card-price { font-family:var(--serif); font-size:18px; color:var(--blue); }
+.card-price-sub { font-size:11px; color:var(--text-soft); font-family:var(--sans); }
+.card-cta { font-size:12px; font-weight:500; color:var(--blue); background:var(--ice); padding:5px 12px; border-radius:6px; transition:background .15s; }
+.card-cta:hover { background:var(--ice-dark); }
+
+/* builder strip inside card */
+.card-builder { display:flex; align-items:center; gap:6px; padding:8px 16px; background:var(--slate); border-top:1px solid var(--border); }
+.builder-dot { width:8px; height:8px; background:var(--blue-mid); border-radius:50%; flex-shrink:0; }
+.builder-name { font-size:11px; font-weight:600; color:var(--text-mid); letter-spacing:.3px; }
+.builder-type { font-size:10px; color:var(--text-soft); margin-left:auto; }
+
+/* ── BUILDERS ── */
+.builders-grid { display:flex; flex-wrap:wrap; gap:8px; }
+.builder-pill { padding:7px 16px; border:1px solid var(--border); border-radius:8px; font-size:13px; color:var(--text-mid); background:var(--white); font-weight:500; transition:all .15s; cursor:pointer; }
+.builder-pill:hover { border-color:var(--blue); color:var(--blue); background:var(--ice); }
+
+/* ── WHY US ── */
+.why-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:16px; }
+.why-card { background:var(--white); border:1px solid var(--border); border-radius:14px; padding:22px; transition:box-shadow .15s; }
+.why-card:hover { box-shadow:var(--shadow); }
+.why-icon { width:40px; height:40px; background:var(--ice); border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+.why-icon svg { width:20px; height:20px; stroke:var(--blue); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.why-title { font-size:14px; font-weight:600; color:var(--navy); margin-bottom:7px; }
+.why-desc  { font-size:13px; color:var(--text-soft); line-height:1.65; }
+
+/* ── TESTIMONIALS ── */
+.testi-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:14px; }
+.testi-card { background:var(--white); border:1px solid var(--border); border-radius:14px; padding:20px; }
+.testi-stars { color:var(--gold); font-size:12px; margin-bottom:10px; }
+.testi-text { font-size:13.5px; color:var(--text-mid); line-height:1.7; font-style:italic; margin-bottom:16px; }
+.testi-author { display:flex; align-items:center; gap:10px; }
+.testi-avatar { width:36px; height:36px; border-radius:50%; background:var(--ice); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:var(--blue); flex-shrink:0; }
+.testi-name { font-size:13px; font-weight:600; color:var(--text-dark); }
+.testi-meta { font-size:11px; color:var(--text-soft); }
+
+/* ── CTA BANNER ── */
+.cta-banner { background:var(--navy); border-radius:18px; padding:44px 48px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; position:relative; overflow:hidden; }
+.cta-banner::before { content:''; position:absolute; right:-60px; top:-60px; width:260px; height:260px; background:radial-gradient(circle, rgba(37,99,235,.35) 0%, transparent 70%); pointer-events:none; }
+.cta-text h2 { font-family:var(--serif); font-size:26px; color:var(--white); margin-bottom:7px; }
+.cta-text p  { font-size:14px; color:rgba(255,255,255,.55); }
+.cta-btns { display:flex; gap:10px; flex-wrap:wrap; }
+.cta-btn-primary { background:var(--blue-mid); color:var(--white); border:none; padding:11px 24px; border-radius:10px; font-size:14px; font-weight:500; transition:background .15s; }
+.cta-btn-primary:hover { background:var(--blue); }
+.cta-btn-sec { background:transparent; color:rgba(255,255,255,.75); border:1px solid rgba(255,255,255,.25); padding:11px 24px; border-radius:10px; font-size:14px; font-weight:500; transition:all .15s; }
+.cta-btn-sec:hover { background:rgba(255,255,255,.08); }
+
+/* ── FOOTER ── */
+.footer { background:var(--slate); border-top:1px solid var(--border); padding:48px 24px 24px; }
+.footer-inner { max-width:1200px; margin:0 auto; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; }
+.footer-brand p { font-size:13px; color:var(--text-soft); line-height:1.7; margin-top:12px; max-width:260px; }
+.footer-col h4 { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--text-dark); margin-bottom:14px; }
+.footer-col a  { display:block; font-size:13px; color:var(--text-soft); margin-bottom:8px; transition:color .12s; }
+.footer-col a:hover { color:var(--blue); }
+.footer-bottom { border-top:1px solid var(--border); padding-top:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+.footer-bottom span { font-size:11.5px; color:var(--text-soft); }
+
+/* ── MODAL / CONTACT FORM ── */
+.modal-overlay { position:fixed; inset:0; background:rgba(13,31,60,.6); backdrop-filter:blur(4px); z-index:999; display:none; align-items:center; justify-content:center; padding:20px; }
+.modal-overlay.open { display:flex; }
+.modal { background:var(--white); border-radius:16px; padding:32px; max-width:440px; width:100%; position:relative; box-shadow:var(--shadow-lg); }
+.modal h3 { font-family:var(--serif); font-size:22px; color:var(--navy); margin-bottom:6px; }
+.modal p  { font-size:13px; color:var(--text-soft); margin-bottom:20px; }
+.modal-close { position:absolute; top:16px; right:16px; background:var(--slate); border:none; width:28px; height:28px; border-radius:50%; font-size:16px; color:var(--text-soft); display:flex; align-items:center; justify-content:center; cursor:pointer; }
+.form-group { margin-bottom:14px; }
+.form-group label { font-size:12px; font-weight:600; color:var(--text-dark); display:block; margin-bottom:5px; }
+.form-group input, .form-group select { width:100%; padding:10px 12px; font-size:14px; font-family:var(--sans); border:1px solid var(--border); border-radius:8px; outline:none; transition:border-color .15s; }
+.form-group input:focus, .form-group select:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(37,99,235,.1); }
+.form-submit { width:100%; background:var(--blue); color:var(--white); border:none; padding:11px; border-radius:8px; font-size:14px; font-weight:500; transition:background .15s; margin-top:6px; }
+.form-submit:hover { background:var(--royal); }
+
+/* ── PROP DETAIL PANEL ── */
+.detail-panel { position:fixed; right:0; top:0; bottom:0; width:420px; background:var(--white); border-left:1px solid var(--border); z-index:200; transform:translateX(100%); transition:transform .3s cubic-bezier(.4,0,.2,1); overflow-y:auto; }
+.detail-panel.open { transform:translateX(0); box-shadow:-8px 0 32px rgba(13,31,60,.15); }
+.detail-header { padding:20px 24px 16px; border-bottom:1px solid var(--border); display:flex; align-items:flex-start; justify-content:space-between; gap:12px; position:sticky; top:0; background:var(--white); z-index:1; }
+.detail-close { background:var(--slate); border:none; width:32px; height:32px; border-radius:50%; font-size:18px; color:var(--text-soft); flex-shrink:0; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+.detail-img { width:100%; height:220px; background:var(--ice); display:flex; align-items:center; justify-content:center; font-size:80px; opacity:.25; }
+.detail-body { padding:20px 24px; }
+.detail-body h3 { font-family:var(--serif); font-size:22px; color:var(--navy); margin-bottom:4px; }
+.detail-chips { display:flex; gap:6px; flex-wrap:wrap; margin:12px 0; }
+.detail-price { font-family:var(--serif); font-size:24px; color:var(--blue); margin-bottom:16px; }
+.detail-section-title { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.8px; color:var(--text-soft); margin-bottom:10px; margin-top:20px; }
+.detail-highlight-list { list-style:none; display:flex; flex-direction:column; gap:7px; }
+.detail-highlight-list li { font-size:13.5px; color:var(--text-mid); display:flex; align-items:center; gap:8px; }
+.detail-highlight-list li::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--blue); flex-shrink:0; }
+.detail-cta { width:100%; background:var(--blue); color:var(--white); border:none; padding:13px; border-radius:10px; font-size:14px; font-weight:500; margin-top:20px; transition:background .15s; }
+.detail-cta:hover { background:var(--royal); }
+
+/* ── STAT STRIP ── */
+.stat-strip { background:var(--navy); color:var(--white); }
+.stat-strip-inner { max-width:1200px; margin:0 auto; padding:32px 24px; display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.stat-item { text-align:center; }
+.stat-val { font-family:var(--serif); font-size:32px; color:var(--white); }
+.stat-lbl { font-size:12px; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.8px; margin-top:4px; }
+
+/* ── UTILITY ── */
+.divider { height:1px; background:var(--border); max-width:1200px; margin:0 auto; }
+.bg-slate { background:var(--slate); }
+
+/* ── NO RESULTS ── */
+.no-results { text-align:center; padding:60px 24px; color:var(--text-soft); }
+.no-results h3 { font-family:var(--serif); font-size:22px; color:var(--navy); margin-bottom:8px; }
+
+@media(max-width:768px){
+  .nav-links,.nav-rera { display:none; }
+  .hero h1 { font-size:34px; }
+  .hero-stats { gap:24px; }
+  .search-row { grid-template-columns:1fr 1fr; }
+  .search-row .search-btn { grid-column:1/-1; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+  .stat-strip-inner { grid-template-columns:repeat(2,1fr); }
+  .detail-panel { width:100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner" id="tickerInner"></div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 2L3 7.5V18h5v-5h4v5h5V7.5L10 2z" fill="#60A5FA"/>
+        </svg>
+      </div>
+      <div class="nav-logo-wordmark">
+        <span>Kedar Estates</span>
+        <span>& Investments</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#projects">New Launches</a>
+      <a href="#projects">Resale</a>
+      <a href="#localities">Localities</a>
+      <a href="#builders">Builders</a>
+      <a href="#about">About Us</a>
+    </div>
+    <button class="nav-cta" onclick="openModal()">Schedule a Visit</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      RERA Registered · Gurugram's Trusted Channel Partner
+    </div>
+    <h1>Find Your <em>Dream Home</em><br>in Gurugram & NCR</h1>
+    <p class="hero-sub">20+ premium projects across Golf Course Road, Dwarka Expressway, SPR Road and New Gurgaon. New launches & verified resale — one trusted advisor.</p>
+    <div class="hero-stats">
+      <div><div class="hero-stat-val">20+</div><div class="hero-stat-lbl">Active Projects</div></div>
+      <div><div class="hero-stat-val">500+</div><div class="hero-stat-lbl">Families Housed</div></div>
+      <div><div class="hero-stat-val">15 Yrs</div><div class="hero-stat-lbl">Market Experience</div></div>
+      <div><div class="hero-stat-val">7</div><div class="hero-stat-lbl">Micro-Markets</div></div>
+    </div>
+    <p class="hero-rera">RERA NO: RC/HARERA/GGM/1787/1382/2022/155 · 8th Floor, Magnum Towers, Sector 58, Gurugram</p>
+    <div style="height:48px"></div>
+  </div>
+</section>
+
+<!-- SEARCH BOX -->
+<div class="search-wrap">
+  <div class="search-box">
+    <div class="search-tabs">
+      <button class="stab active" onclick="setTab(this)">Buy</button>
+      <button class="stab" onclick="setTab(this)">Rent</button>
+      <button class="stab" onclick="setTab(this)">New Launch</button>
+      <button class="stab" onclick="setTab(this)">Resale</button>
+      <button class="stab" onclick="setTab(this)">Commercial</button>
+    </div>
+    <div class="search-row">
+      <div class="sfield">
+        <label>Locality / Project</label>
+        <input type="text" id="searchInput" placeholder="Golf Course Rd, Sec 63A…">
+      </div>
+      <div class="sfield">
+        <label>Type</label>
+        <select id="typeFilter">
+          <option value="">All Types</option>
+          <option value="2 BHK">2 BHK</option>
+          <option value="3 BHK">3 BHK</option>
+          <option value="4 BHK">4 BHK</option>
+          <option value="5 BHK">5 BHK</option>
+          <option value="Penthouse">Penthouse</option>
+          <option value="Villa">Villa</option>
+        </select>
+      </div>
+      <div class="sfield">
+        <label>Budget</label>
+        <select id="budgetFilter">
+          <option value="">Any Budget</option>
+          <option value="1">Under ₹1 Cr</option>
+          <option value="2">₹1 – 2 Cr</option>
+          <option value="4">₹2 – 4 Cr</option>
+          <option value="7">₹4 – 7 Cr</option>
+          <option value="99">₹7 Cr+</option>
+        </select>
+      </div>
+      <div class="sfield">
+        <label>Status</label>
+        <select id="statusFilter">
+          <option value="">All Status</option>
+          <option value="Ready to Move">Ready to Move</option>
+          <option value="Under Construction">Under Construction</option>
+          <option value="New Launch">New Launch</option>
+        </select>
+      </div>
+      <button class="search-btn" onclick="runSearch()">Search →</button>
+    </div>
+  </div>
+</div>
+
+<!-- STAT STRIP -->
+<div class="stat-strip" style="margin-top:56px">
+  <div class="stat-strip-inner">
+    <div class="stat-item"><div class="stat-val">20+</div><div class="stat-lbl">Active Listings</div></div>
+    <div class="stat-item"><div class="stat-val">₹0</div><div class="stat-lbl">Brokerage on Select Launches</div></div>
+    <div class="stat-item"><div class="stat-val">500+</div><div class="stat-lbl">Happy Families</div></div>
+    <div class="stat-item"><div class="stat-val">12+</div><div class="stat-lbl">Bank Tie-ups</div></div>
+  </div>
+</div>
+
+<!-- LOCALITIES -->
+<section class="section" id="localities">
+  <div class="section-inner">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Explore by Locality</div>
+        <div class="section-sub">Gurugram's most sought-after micro-markets</div>
+      </div>
+    </div>
+    <div class="loc-grid" id="locGrid">
+      <div class="loc-card" onclick="filterLocality('Golf Course Road',this)"><span class="loc-emoji">🏌️</span><div class="loc-name">Golf Course Road</div><div class="loc-count">3 projects</div></div>
+      <div class="loc-card" onclick="filterLocality('Golf Course Ext',this)"><span class="loc-emoji">🌿</span><div class="loc-name">Golf Course Ext.</div><div class="loc-count">5 projects</div></div>
+      <div class="loc-card" onclick="filterLocality('Dwarka Expressway',this)"><span class="loc-emoji">🛣️</span><div class="loc-name">Dwarka Expressway</div><div class="loc-count">5 projects</div></div>
+      <div class="loc-card" onclick="filterLocality('SPR Road',this)"><span class="loc-emoji">🏙️</span><div class="loc-name">SPR Road</div><div class="loc-count">3 projects</div></div>
+      <div class="loc-card" onclick="filterLocality('Sohna Road',this)"><span class="loc-emoji">🌅</span><div class="loc-name">Sohna Road</div><div class="loc-count">2 projects</div></div>
+      <div class="loc-card" onclick="filterLocality('New Gurgaon',this)"><span class="loc-emoji">🚀</span><div class="loc-name">New Gurgaon</div><div class="loc-count">2 projects</div></div>
+      <div class="loc-card" onclick="filterLocality('Gurgaon Central',this)"><span class="loc-emoji">🏢</span><div class="loc-name">Gurgaon Central</div><div class="loc-count">2 projects</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section class="section bg-slate" id="projects">
+  <div class="section-inner">
+    <div class="section-header">
+      <div>
+        <div class="section-title" id="projectsTitle">Featured Projects</div>
+        <div class="section-sub" id="projectsSub">Handpicked new launches & resale across Gurugram</div>
+      </div>
+      <a href="#" class="view-all">View all listings →</a>
+    </div>
+    <div class="filter-bar">
+      <button class="fbtn active" onclick="applyFilter('all',this)">All</button>
+      <button class="fbtn" onclick="applyFilter('new',this)">New Launch</button>
+      <button class="fbtn" onclick="applyFilter('resale',this)">Resale</button>
+      <button class="fbtn" onclick="applyFilter('luxury',this)">Luxury (₹4Cr+)</button>
+      <button class="fbtn" onclick="applyFilter('rtm',this)">Ready to Move</button>
+      <button class="fbtn" onclick="applyFilter('3bhk',this)">3 BHK</button>
+      <button class="fbtn" onclick="applyFilter('4bhk',this)">4 BHK</button>
+    </div>
+    <div class="results-bar">
+      <span class="results-count" id="resultCount">Showing all projects</span>
+      <select class="sort-sel" onchange="sortProps(this.value)">
+        <option value="featured">Sort: Featured</option>
+        <option value="price_asc">Price: Low to High</option>
+        <option value="price_desc">Price: High to Low</option>
+        <option value="newest">Newest First</option>
+      </select>
+    </div>
+    <div class="prop-grid" id="propGrid"></div>
+    <div class="no-results" id="noResults" style="display:none">
+      <h3>No projects found</h3>
+      <p>Try adjusting your filters or <a href="#" style="color:var(--blue)" onclick="resetAll()">reset all</a></p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BUILDERS -->
+<section class="section" id="builders">
+  <div class="section-inner">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Our Builder Partners</div>
+        <div class="section-sub">India's top developers · Verified inventory · Zero brokerage on select projects</div>
+      </div>
+    </div>
+    <div class="builders-grid">
+      <div class="builder-pill">DLF</div><div class="builder-pill">Godrej Properties</div>
+      <div class="builder-pill">Emaar India</div><div class="builder-pill">Sobha Developers</div>
+      <div class="builder-pill">Mahindra Lifespaces</div><div class="builder-pill">Birla Estates</div>
+      <div class="builder-pill">Signature Global</div><div class="builder-pill">Adani Realty</div>
+      <div class="builder-pill">Puri Constructions</div><div class="builder-pill">Experion Developers</div>
+      <div class="builder-pill">Max Estates</div><div class="builder-pill">Hero Homes</div>
+      <div class="builder-pill">Tarc India</div><div class="builder-pill">Silverglades</div>
+      <div class="builder-pill">Conscient</div><div class="builder-pill">BPTP</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHY KEDAR -->
+<section class="section bg-slate" id="about">
+  <div class="section-inner">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Why Kedar Estates</div>
+        <div class="section-sub">Your end-to-end real estate partner in Gurugram</div>
+      </div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2l2.5 5 5.5.8-4 3.9.9 5.5L12 14.5l-4.9 2.7.9-5.5L4 6.8l5.5-.8L12 2z"/></svg></div>
+        <div class="why-title">RERA & HARERA Registered</div>
+        <div class="why-desc">Fully licensed by HARERA Gurugram. Every project we represent is legally compliant and verified.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div class="why-title">15+ Years Experience</div>
+        <div class="why-desc">Deep market expertise across Gurugram's micro-markets. We know every sector, every builder, every deal.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></div>
+        <div class="why-title">Zero Brokerage</div>
+        <div class="why-desc">On selected new launch projects, we charge zero brokerage. Builder-paid commissions, full service for you.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M8 6V4a4 4 0 018 0v2"/></svg></div>
+        <div class="why-title">Home Loan Assistance</div>
+        <div class="why-desc">Tie-ups with 12+ banks. We help you get the best rate and handle end-to-end documentation.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <div class="why-title">Dedicated Site Visits</div>
+        <div class="why-desc">Relationship manager for every client. We accompany you on site visits and handle all builder interactions.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div class="why-title">500+ Happy Families</div>
+        <div class="why-desc">Registry, possession, resale — we stay with you beyond the purchase. Trusted by 500+ families across NCR.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div>
+        <div class="section-title">What Our Clients Say</div>
+        <div class="section-sub">Real stories from real buyers across Gurugram</div>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Kedar made my home-buying journey smooth and stress-free. Their team guided me at every step, ensuring transparency and trust throughout."</p>
+        <div class="testi-author"><div class="testi-avatar">KA</div><div><div class="testi-name">Karishma Arora</div><div class="testi-meta">3 BHK · Golf Course Ext.</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"I invested through Kedar and couldn't be happier. The process was seamless, pricing was fair, and service was exceptional. Long-term value delivered."</p>
+        <div class="testi-author"><div class="testi-avatar">AW</div><div><div class="testi-name">Dr. Ajay Wishwas</div><div class="testi-meta">4 BHK · Dwarka Expressway</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"From site visits to documentation, everything was handled with professionalism. They made me feel confident in one of the biggest decisions of my life."</p>
+        <div class="testi-author"><div class="testi-avatar">VB</div><div><div class="testi-name">Vijay Bharti</div><div class="testi-meta">2 BHK · Sohna Road</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Buying property with Kedar was an excellent experience. Their team explained every detail clearly, making the whole process transparent and easy."</p>
+        <div class="testi-author"><div class="testi-avatar">AS</div><div><div class="testi-name">Ashwin Saini</div><div class="testi-meta">3 BHK · SPR Road</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="section" style="padding-top:0">
+  <div class="section-inner">
+    <div class="cta-banner">
+      <div class="cta-text">
+        <h2>Ready to find your perfect home?</h2>
+        <p>Talk to our Gurugram real estate expert today. Free consultation, zero pressure.</p>
+      </div>
+      <div class="cta-btns">
+        <button class="cta-btn-primary" onclick="openModal()">Book Free Consultation</button>
+        <a href="tel:+918595221631" class="cta-btn-sec">Call +91-8595221631</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="nav-logo-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2L3 7.5V18h5v-5h4v5h5V7.5L10 2z" fill="#60A5FA"/></svg></div>
+          <div class="nav-logo-wordmark"><span>Kedar Estates</span><span>& Investments</span></div>
+        </div>
+        <p>RERA-registered channel partner in Gurugram. 8th Floor, Magnum Towers, Sector 58, Gurugram · newbookings21@gmail.com · +91-8595221631</p>
+        <p style="margin-top:8px;font-size:11px;color:var(--text-soft)">RERA NO: RC/HARERA/GGM/1787/1382/2022/155</p>
+      </div>
+      <div class="footer-col">
+        <h4>Projects</h4>
+        <a href="#">Golf Course Road</a><a href="#">Golf Course Ext.</a>
+        <a href="#">Dwarka Expressway</a><a href="#">SPR Road</a>
+        <a href="#">New Gurgaon</a><a href="#">Sohna Road</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#">New Launches</a><a href="#">Resale Properties</a>
+        <a href="#">Site Visits</a><a href="#">Home Loan Help</a>
+        <a href="#">NRI Investments</a><a href="#">Commercial</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About Us</a><a href="#">Testimonials</a>
+        <a href="#">Builder Partners</a><a href="#" onclick="openModal()">Contact Us</a>
+        <a href="#">Privacy Policy</a><a href="#">Disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Kedar Estates & Investments · All rights reserved</span>
+      <span>Prices are indicative. Images are representational. Subject to change without notice.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <h3>Book a Free Consultation</h3>
+    <p>Our Gurugram expert will call you within 2 hours.</p>
+    <div class="form-group"><label>Full Name</label><input type="text" placeholder="Rohan Sharma"></div>
+    <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 98765 43210"></div>
+    <div class="form-group"><label>Interested In</label>
+      <select><option>New Launch</option><option>Resale</option><option>Investment</option><option>Site Visit</option></select>
+    </div>
+    <div class="form-group"><label>Budget</label>
+      <select><option>Under ₹1 Cr</option><option>₹1–2 Cr</option><option>₹2–4 Cr</option><option>₹4–7 Cr</option><option>₹7 Cr+</option></select>
+    </div>
+    <button class="form-submit" onclick="submitForm()">Request Callback →</button>
+  </div>
+</div>
+
+<!-- PROPERTY DETAIL PANEL -->
+<div class="detail-panel" id="detailPanel">
+  <div class="detail-header">
+    <div>
+      <div style="font-size:11px;color:var(--text-soft);text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px" id="dpBadge">New Launch</div>
+      <div style="font-size:16px;font-weight:600;color:var(--navy)" id="dpTitle">Project Name</div>
+    </div>
+    <button class="detail-close" onclick="closeDetail()">×</button>
+  </div>
+  <div class="detail-img" id="dpEmoji">🏢</div>
+  <div class="detail-body">
+    <h3 id="dpName"></h3>
+    <div style="font-size:13px;color:var(--text-soft);margin-bottom:8px" id="dpLoc"></div>
+    <div class="detail-chips" id="dpChips"></div>
+    <div class="detail-price" id="dpPrice"></div>
+    <div class="detail-section-title">Key Highlights</div>
+    <ul class="detail-highlight-list" id="dpHighlights"></ul>
+    <div class="detail-section-title">Developer</div>
+    <div style="font-size:14px;color:var(--text-mid);font-weight:500" id="dpDev"></div>
+    <div class="detail-section-title">Payment Plan</div>
+    <div style="font-size:13.5px;color:var(--text-mid)" id="dpPayment"></div>
+    <button class="detail-cta" onclick="openModal()">Request Site Visit & Pricing →</button>
+  </div>
+</div>
+
+<script>
+// ── DATA ─────────────────────────────────────────────────────────────
+const properties = [
+  { id:1,  name:"Sobha Crescent",                    developer:"Sobha Developers",           locality:"Golf Course Ext.",   sector:"Sector 63A",   bhk:"3 & 4 BHK", price:"₹3.8 Cr",  priceNum:3.8,  sqft:"2400–3800 sq ft", badge:"new",    badgeLabel:"New Launch",    status:"Under Construction", emoji:"🌄", tags:["new","luxury","golf"],  rera:"HARERA Approved", highlights:["12-acre low-density campus","Uninterrupted Aravali views","Dedicated sports arena","Ultra-luxury finishes","Heart of Gurugram location"], payment:"EOI: ₹10 Lakhs · Inaugural pricing for early investors" },
+  { id:2,  name:"The Legacy by Silverglades",         developer:"Silverglades",               locality:"Golf Course Ext.",   sector:"Sector 63A",   bhk:"3, 4 & 5 BHK",price:"₹4.2 Cr", priceNum:4.2, sqft:"2800–5200 sq ft", badge:"new",    badgeLabel:"New Launch",    status:"Under Construction", emoji:"🏛️", tags:["new","luxury","golf"],  rera:"RERA Approved", highlights:["Forest-themed low-density project","Private lift for each unit","30:70 investor plan","Most efficient floor plans","Premium clubhouse"], payment:"30:70 Plan · Pay 30% now, 70% on possession" },
+  { id:3,  name:"BPTP Downtown 66",                   developer:"BPTP",                       locality:"Golf Course Ext.",   sector:"Sector 66",    bhk:"3 & 4 BHK", price:"₹2.6 Cr",  priceNum:2.6,  sqft:"1900–2800 sq ft", badge:"hot",    badgeLabel:"Hot Pick",      status:"New Launch",         emoji:"🏙️", tags:["new","3bhk","4bhk","golf"], rera:"RERA Registered", highlights:["Downtown energy meets elevated living","Sky bridge connecting towers","Resort-style podium amenities","Ground-level retail & F&B","Prime Sector 66 address"], payment:"EOI open · Special inaugural pricing" },
+  { id:4,  name:"Puri Diplomatic Residences",         developer:"Puri Constructions",         locality:"Dwarka Expressway",  sector:"Sector 111",   bhk:"3 & 4 BHK", price:"₹2.1 Cr",  priceNum:2.1,  sqft:"1750–2600 sq ft", badge:"new",    badgeLabel:"New Launch",    status:"Under Construction", emoji:"🏗️", tags:["new","3bhk","4bhk","dwarka"], rera:"RERA Approved", highlights:["30:70 investment plan — own with 30% now","Ultra-modern clubhouse","Efficient luxury layouts","Delhi border location","Construction at full swing"], payment:"30:70 Plan · Own with just 30% now, 70% at possession" },
+  { id:5,  name:"Emaar Urban Ascent",                 developer:"Emaar India",                locality:"Dwarka Expressway",  sector:"Sector 112",   bhk:"2 & 3 BHK", price:"₹1.65 Cr", priceNum:1.65, sqft:"1300–1900 sq ft", badge:"new",    badgeLabel:"New Launch",    status:"Under Construction", emoji:"🌆", tags:["new","3bhk","dwarka"], rera:"RERA Approved", highlights:["Emaar's signature design language","Excellent metro connectivity","Rooftop sky lounge","Smart home features","7 acres of landscape"], payment:"Construction-linked plan · 10% at booking" },
+  { id:6,  name:"Max Estate 360",                     developer:"Max Estates",                locality:"Dwarka Expressway",  sector:"Sector 36A",   bhk:"3 BHK", price:"₹2.3 Cr",      priceNum:2.3,  sqft:"1850–2200 sq ft", badge:"resale", badgeLabel:"Resale",        status:"Ready to Move",      emoji:"🏠", tags:["resale","3bhk","rtm","dwarka"], rera:"RERA Registered", highlights:["Ready to move in immediately","Premium Max Estates brand","Excellent Dwarka Exp connectivity","World-class amenities","Strong resale value"], payment:"Resale · Immediate possession · Loan available" },
+  { id:7,  name:"Birla Arika",                        developer:"Birla Estates",              locality:"SPR Road",           sector:"SPR Road",     bhk:"3 & 4 BHK", price:"₹4.8 Cr",  priceNum:4.8,  sqft:"3000–4200 sq ft", badge:"hot",    badgeLabel:"Ultra Luxury",  status:"Under Construction", emoji:"💎", tags:["new","luxury","3bhk","4bhk"], rera:"HARERA Approved", highlights:["Birla quality benchmark","Low-density premium development","Grand clubhouse — 1 lakh sq ft","SPR Road's finest address","Forest-facing residences"], payment:"CLP · 15% at booking, balance on milestones" },
+  { id:8,  name:"Signature Global Cloverdale SPR",   developer:"Signature Global",           locality:"SPR Road",           sector:"Sector 89",    bhk:"3 BHK", price:"₹1.8 Cr",      priceNum:1.8,  sqft:"1550–1950 sq ft", badge:"new",    badgeLabel:"New Launch",    status:"Under Construction", emoji:"🌿", tags:["new","3bhk"], rera:"RERA Approved", highlights:["Signature Global's flagship luxury","SPR Road connectivity","Affordable luxury segment","RERA approved and launched","Multiple tower options"], payment:"20:80 plan · 20% booking, 80% on possession" },
+  { id:9,  name:"Sobha Aranya",                       developer:"Sobha Developers",           locality:"New Gurgaon",        sector:"Sector 80",    bhk:"3 BHK", price:"₹1.9 Cr",      priceNum:1.9,  sqft:"1700–2100 sq ft", badge:"new",    badgeLabel:"New Launch",    status:"Under Construction", emoji:"🌲", tags:["new","3bhk"], rera:"RERA Approved", highlights:["Sobha's precision construction","New Gurgaon's emerging premium zone","25+ world-class amenities","Nature-themed design","Strong appreciation potential"], payment:"CLP · 10% booking, linked to construction" },
+  { id:10, name:"Adani Lushlands",                    developer:"Adani Realty",               locality:"Gurgaon Central",    sector:"Sector 76",    bhk:"4 & 5 BHK",price:"₹5.5 Cr",   priceNum:5.5,  sqft:"3800–5500 sq ft", badge:"hot",    badgeLabel:"Ultra Luxury",  status:"Under Construction", emoji:"👑", tags:["new","luxury","4bhk"], rera:"RERA Approved", highlights:["Adani's ultra-luxury flagship","5-star resort-style living","Private terrace gardens","Sky-deck with city views","Concierge services"], payment:"CLP · 20% at booking, 80% on milestones" },
+  { id:11, name:"Paras Quartier",                     developer:"Paras Buildtech",            locality:"Gurgaon Central",    sector:"Sector 2",     bhk:"4 BHK",  price:"₹7.2 Cr",     priceNum:7.2,  sqft:"4500–6000 sq ft", badge:"resale", badgeLabel:"Resale",        status:"Ready to Move",      emoji:"🏰", tags:["resale","luxury","4bhk","rtm"], rera:"RERA Approved", highlights:["Ready possession — move in now","Ultra-luxury Gurugram address","Award-winning architecture","Private pool option","Strong rental yield — 4–5%"], payment:"Resale · Immediate possession · Bank loan available" },
+  { id:12, name:"Godrej Sora Gurgaon",               developer:"Godrej Properties",          locality:"Golf Course Road",   sector:"Sector 54",    bhk:"3 & 4 BHK",price:"₹3.2 Cr",  priceNum:3.2,  sqft:"2100–3200 sq ft", badge:"new",    badgeLabel:"New Launch",    status:"Under Construction", emoji:"🏢", tags:["new","3bhk","4bhk","golf"], rera:"HARERA Approved", highlights:["Godrej's flagship Golf Course Rd project","Prime Sector 54 address","Walking distance from Huda City Centre metro","World-class amenities","Strong investor demand"], payment:"10% booking, balance on CLP" },
+  { id:13, name:"Conscient Elevate",                  developer:"Conscient",                  locality:"Golf Course Ext.",   sector:"Sector 59",    bhk:"3 & 4 BHK",price:"₹2.8 Cr",  priceNum:2.8,  sqft:"2000–3000 sq ft", badge:"new",    badgeLabel:"New Launch",    status:"Under Construction", emoji:"🌠", tags:["new","3bhk","4bhk","golf"], rera:"RERA Approved", highlights:["Golf Course Ext. prime location","High-rise luxury apartments","Panoramic city views","30+ amenities","Conscient quality assurance"], payment:"30:70 Plan available" },
+  { id:14, name:"Hero Homes The Palatial",            developer:"Hero Homes",                 locality:"Dwarka Expressway",  sector:"Sector 104",   bhk:"2 & 3 BHK",price:"₹1.45 Cr", priceNum:1.45, sqft:"1200–1700 sq ft", badge:"new",    badgeLabel:"New Launch",    status:"Under Construction", emoji:"🏘️", tags:["new","3bhk","dwarka"], rera:"RERA Approved", highlights:["Hero brand reliability","Dwarka Expressway connectivity","Affordable luxury positioning","Landscaped podium","Easy home loan options"], payment:"10% booking · Balance on CLP" },
+  { id:15, name:"Mahindra Luminare",                  developer:"Mahindra Lifespaces",        locality:"Golf Course Ext.",   sector:"Sector 59",    bhk:"3 & 4 BHK",price:"₹3.5 Cr",  priceNum:3.5,  sqft:"2500–3800 sq ft", badge:"resale", badgeLabel:"Resale",        status:"Ready to Move",      emoji:"✨", tags:["resale","3bhk","4bhk","rtm","golf"], rera:"RERA Approved", highlights:["Ready possession — immediate move-in","Mahindra's premium brand","Golf Course Ext. address","Great rental demand","Excellent connectivity"], payment:"Resale · Immediate possession available" },
+];
+
+let currentFilter = 'all';
+let currentSort   = 'featured';
+let localityFilter = '';
+
+// ── TICKER ──────────────────────────────────────────────────────────
+const tickerData = properties.map(p=>`${p.name} — ${p.price} onwards, ${p.sector}`);
+const ti = document.getElementById('tickerInner');
+const tickerHTML = [...tickerData,...tickerData].map(t=>`<div class="ticker-item"><span class="ticker-dot"></span>${t}</div>`).join('');
+ti.innerHTML = tickerHTML;
+
+// ── TABS ────────────────────────────────────────────────────────────
+function setTab(el){
+  document.querySelectorAll('.stab').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// ── FILTER ──────────────────────────────────────────────────────────
+function applyFilter(tag, el){
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  currentFilter = tag;
+  localityFilter = '';
+  document.querySelectorAll('.loc-card').forEach(c=>c.classList.remove('active'));
+  document.getElementById('projectsTitle').textContent = 'Featured Projects';
+  document.getElementById('projectsSub').textContent   = 'Handpicked new launches & resale across Gurugram';
+  renderCards();
+}
+
+function filterLocality(loc, el){
+  document.querySelectorAll('.loc-card').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  localityFilter = loc;
+  currentFilter  = 'all';
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  document.querySelector('.fbtn').classList.add('active');
+  document.getElementById('projectsTitle').textContent = `Projects in ${loc}`;
+  document.getElementById('projectsSub').textContent   = `All Kedar Estates listings in ${loc}`;
+  renderCards();
+  document.getElementById('projects').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function sortProps(val){ currentSort = val; renderCards(); }
+
+function runSearch(){
+  const q  = document.getElementById('searchInput').value.toLowerCase().trim();
+  const tp = document.getElementById('typeFilter').value;
+  const bg = parseFloat(document.getElementById('budgetFilter').value)||99;
+  const st = document.getElementById('statusFilter').value;
+  localityFilter = '';
+  currentFilter  = 'all';
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  document.querySelector('.fbtn').classList.add('active');
+  document.getElementById('projectsTitle').textContent = 'Search Results';
+  document.getElementById('projectsSub').textContent   = 'Matching listings for your criteria';
+  renderCards({q, tp, bg, st});
+  document.getElementById('projects').scrollIntoView({behavior:'smooth'});
+}
+
+function resetAll(){
+  localityFilter = '';
+  currentFilter  = 'all';
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  document.querySelector('.fbtn').classList.add('active');
+  document.querySelectorAll('.loc-card').forEach(c=>c.classList.remove('active'));
+  document.getElementById('projectsTitle').textContent = 'Featured Projects';
+  document.getElementById('projectsSub').textContent   = 'Handpicked new launches & resale across Gurugram';
+  renderCards();
+  return false;
+}
+
+// ── RENDER ──────────────────────────────────────────────────────────
+function renderCards(search=null){
+  let list = [...properties];
+
+  // locality
+  if(localityFilter) list = list.filter(p=>p.locality.toLowerCase().includes(localityFilter.toLowerCase().split(' ')[0].toLowerCase()));
+
+  // filter button
+  if(currentFilter==='new')    list = list.filter(p=>p.tags.includes('new'));
+  if(currentFilter==='resale') list = list.filter(p=>p.tags.includes('resale'));
+  if(currentFilter==='luxury') list = list.filter(p=>p.priceNum>=4);
+  if(currentFilter==='rtm')    list = list.filter(p=>p.tags.includes('rtm'));
+  if(currentFilter==='3bhk')   list = list.filter(p=>p.tags.includes('3bhk'));
+  if(currentFilter==='4bhk')   list = list.filter(p=>p.tags.includes('4bhk'));
+
+  // search overrides
+  if(search){
+    if(search.q)  list = list.filter(p=>p.name.toLowerCase().includes(search.q)||p.locality.toLowerCase().includes(search.q)||p.sector.toLowerCase().includes(search.q)||p.developer.toLowerCase().includes(search.q));
+    if(search.tp) list = list.filter(p=>p.bhk.includes(search.tp.replace(' BHK','')));
+    if(search.st) list = list.filter(p=>p.status===search.st);
+    if(search.bg<99){
+      const ranges={1:[0,1],2:[1,2],4:[2,4],7:[4,7],99:[7,999]};
+      const r=ranges[search.bg]||[0,999];
+      list=list.filter(p=>p.priceNum>=r[0]&&p.priceNum<=r[1]);
+    }
+  }
+
+  // sort
+  if(currentSort==='price_asc')  list.sort((a,b)=>a.priceNum-b.priceNum);
+  if(currentSort==='price_desc') list.sort((a,b)=>b.priceNum-a.priceNum);
+  if(currentSort==='newest')     list.sort((a,b)=>b.id-a.id);
+
+  const grid = document.getElementById('propGrid');
+  const noRes = document.getElementById('noResults');
+  document.getElementById('resultCount').textContent = `Showing ${list.length} listing${list.length!==1?'s':''}`;
+
+  if(list.length===0){ grid.innerHTML=''; noRes.style.display='block'; return; }
+  noRes.style.display='none';
+
+  grid.innerHTML = list.map(p=>`
+    <div class="prop-card" onclick="openDetail(${p.id})">
+      <div class="card-img">
+        <div class="card-img-emoji">${p.emoji}</div>
+        <div class="card-img-overlay"></div>
+        <span class="card-badge badge-${p.badge}">${p.badgeLabel}</span>
+        <span class="badge-rera">${p.rera}</span>
+      </div>
+      <div class="card-builder">
+        <div class="builder-dot"></div>
+        <div class="builder-name">${p.developer}</div>
+        <div class="builder-type">${p.status}</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">${p.name}</div>
+        <div class="card-loc">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          ${p.sector}, ${p.locality}
+        </div>
+        <div class="card-chips">
+          <span class="chip">${p.bhk}</span>
+          <span class="chip">${p.sqft}</span>
+        </div>
+        <div class="card-foot">
+          <div>
+            <div class="card-price">${p.price} <span style="font-family:var(--sans);font-size:12px;color:var(--text-soft)">onwards</span></div>
+          </div>
+          <span class="card-cta">View Details →</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── DETAIL PANEL ─────────────────────────────────────────────────────
+function openDetail(id){
+  const p = properties.find(x=>x.id===id);
+  if(!p) return;
+  document.getElementById('dpBadge').textContent    = p.badgeLabel;
+  document.getElementById('dpTitle').textContent    = p.name;
+  document.getElementById('dpEmoji').style.fontSize = '90px';
+  document.getElementById('dpEmoji').textContent    = p.emoji;
+  document.getElementById('dpName').textContent     = p.name;
+  document.getElementById('dpLoc').textContent      = `${p.sector}, ${p.locality}, Gurugram`;
+  document.getElementById('dpPrice').textContent    = p.price + ' onwards';
+  document.getElementById('dpDev').textContent      = p.developer;
+  document.getElementById('dpPayment').textContent  = p.payment;
+  document.getElementById('dpChips').innerHTML      = `<span class="chip">${p.bhk}</span><span class="chip">${p.sqft}</span><span class="chip">${p.status}</span><span class="chip">${p.rera}</span>`;
+  document.getElementById('dpHighlights').innerHTML = p.highlights.map(h=>`<li>${h}</li>`).join('');
+  document.getElementById('detailPanel').classList.add('open');
+}
+function closeDetail(){ document.getElementById('detailPanel').classList.remove('open'); }
+
+// ── MODAL ────────────────────────────────────────────────────────────
+function openModal(){ document.getElementById('modalOverlay').classList.add('open'); }
+function closeModal(){ document.getElementById('modalOverlay').classList.remove('open'); }
+function closeModalOutside(e){ if(e.target===document.getElementById('modalOverlay')) closeModal(); }
+function submitForm(){
+  document.querySelector('.modal h3').textContent = '✓ Request Received!';
+  document.querySelector('.modal p').textContent  = 'Our expert will call you within 2 hours. Thank you!';
+  document.querySelector('.form-submit').style.display = 'none';
+  document.querySelectorAll('.form-group').forEach(g=>g.style.display='none');
+  setTimeout(closeModal, 2800);
+}
+
+// ── INIT ─────────────────────────────────────────────────────────────
+renderCards();
+</script>
+</body>
+</html>
