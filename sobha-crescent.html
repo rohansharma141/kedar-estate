@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sobha Crescent — Sector 63A, Gurugram | Kedar Estate and Investments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ─────────────────────────────────────────────── */
+:root{
+  --navy:#0D1F3C; --royal:#1A3D8F; --blue:#2563EB; --bm:#3B82F6;
+  --sky:#60A5FA; --ice:#EFF6FF; --ice2:#DBEAFE; --white:#FFF;
+  --slate:#F8FAFF; --td:#0D1F3C; --tm:#374151; --ts:#6B7280;
+  --border:#E5EEFF; --gold:#F59E0B;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --r:10px; --sh:0 1px 3px rgba(13,31,60,.07),0 4px 16px rgba(13,31,60,.05);
+  --shl:0 8px 32px rgba(13,31,60,.13);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--td);background:var(--white);line-height:1.6;}
+a{text-decoration:none;color:inherit;} button{cursor:pointer;font-family:var(--sans);}
+img{display:block;max-width:100%;}
+
+/* ── NAV ───────────────────────────────────────────────── */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);}
+.nav-in{max-width:1200px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.nav-logo img{height:42px;width:auto;}
+.nav-links{display:flex;align-items:center;gap:4px;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--tm);padding:6px 11px;border-radius:8px;transition:all .15s;white-space:nowrap;}
+.nav-links a:hover{color:var(--blue);background:var(--ice);}
+.nav-sobha{background:linear-gradient(135deg,#1e40af,#1d4ed8)!important;color:#fff!important;padding:7px 14px!important;border-radius:9px!important;position:relative;}
+.nav-sobha-badge{position:absolute;top:-6px;right:-4px;background:var(--gold);color:#000;font-size:8px;font-weight:700;padding:1px 6px;border-radius:10px;white-space:nowrap;}
+.nav-phone{font-size:12px;color:var(--ts);display:flex;align-items:center;gap:5px;}
+.nav-cta{background:var(--blue);color:#fff;font-size:13px;font-weight:500;padding:8px 18px;border-radius:var(--r);border:none;transition:background .15s;}
+.nav-cta:hover{background:var(--royal);}
+
+/* ── HERO ──────────────────────────────────────────────── */
+.hero{background:var(--navy);position:relative;overflow:hidden;min-height:560px;display:flex;align-items:center;}
+.hero-bg{position:absolute;inset:0;background:
+  radial-gradient(ellipse 60% 100% at 110% 50%,rgba(37,99,235,.28) 0%,transparent 65%),
+  radial-gradient(ellipse 50% 80% at -10% 80%,rgba(96,165,250,.13) 0%,transparent 60%);}
+.hero-grid{position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+  background-size:56px 56px;}
+.hero-in{max-width:1200px;margin:0 auto;padding:72px 24px 56px;display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:center;position:relative;z-index:1;}
+.hero-crumb{font-size:12px;color:rgba(255,255,255,.4);margin-bottom:16px;display:flex;align-items:center;gap:6px;}
+.hero-crumb a{color:var(--sky);transition:opacity .15s;} .hero-crumb a:hover{opacity:.75;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(96,165,250,.15);border:1px solid rgba(96,165,250,.35);color:var(--sky);font-size:11.5px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:.5px;}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:#22C55E;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.hero h1{font-family:var(--serif);font-size:54px;font-weight:600;color:#fff;line-height:1.06;margin-bottom:6px;}
+.hero h1 em{font-style:italic;color:var(--sky);}
+.hero-dev{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:18px;letter-spacing:.3px;}
+.hero-desc{font-size:15px;color:rgba(255,255,255,.58);line-height:1.72;max-width:480px;margin-bottom:28px;}
+.hero-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
+.hchip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.8);font-size:12px;padding:5px 13px;border-radius:20px;}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.hbtn-primary{background:var(--blue);color:#fff;border:none;padding:12px 26px;border-radius:10px;font-size:14px;font-weight:500;transition:background .15s;}
+.hbtn-primary:hover{background:var(--royal);}
+.hbtn-sec{background:transparent;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.28);padding:12px 26px;border-radius:10px;font-size:14px;font-weight:500;transition:all .15s;}
+.hbtn-sec:hover{background:rgba(255,255,255,.08);}
+
+/* Hero card */
+.hero-card{background:rgba(255,255,255,.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:28px;}
+.hero-card-title{font-family:var(--serif);font-size:16px;color:rgba(255,255,255,.5);margin-bottom:18px;letter-spacing:.5px;text-transform:uppercase;font-weight:400;}
+.hc-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+.hc-row:last-child{border-bottom:none;}
+.hc-label{font-size:11.5px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.7px;}
+.hc-val{font-family:var(--serif);font-size:18px;color:#fff;font-weight:600;text-align:right;}
+.hc-val small{font-family:var(--sans);font-size:11px;color:rgba(255,255,255,.4);display:block;margin-top:2px;font-weight:400;}
+.hero-rera{font-size:10px;color:rgba(255,255,255,.25);margin-top:18px;line-height:1.5;}
+
+/* ── KEY STATS BAR ─────────────────────────────────────── */
+.stats-bar{background:var(--navy);}
+.stats-in{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(6,1fr);}
+.stat-item{padding:24px 16px;text-align:center;border-right:1px solid rgba(255,255,255,.07);}
+.stat-item:last-child{border-right:none;}
+.stat-val{font-family:var(--serif);font-size:22px;color:#fff;font-weight:600;}
+.stat-lbl{font-size:10.5px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.7px;margin-top:3px;}
+
+/* ── SECTIONS ──────────────────────────────────────────── */
+.section{padding:72px 24px;}
+.section-in{max-width:1200px;margin:0 auto;}
+.section-eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--blue);margin-bottom:10px;}
+.section-title{font-family:var(--serif);font-size:40px;font-weight:600;color:var(--navy);line-height:1.12;margin-bottom:14px;}
+.section-title em{font-style:italic;color:var(--blue);}
+.section-sub{font-size:15px;color:var(--ts);line-height:1.72;max-width:640px;}
+.divider{height:1px;background:var(--border);max-width:1200px;margin:0 auto;}
+.bg-slate{background:var(--slate);}
+.bg-navy{background:var(--navy);}
+
+/* ── PROJECT OVERVIEW ──────────────────────────────────── */
+.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:40px;}
+.overview-img{border-radius:16px;overflow:hidden;position:relative;}
+.overview-img-inner{width:100%;height:380px;background:linear-gradient(135deg,#0D1F3C 0%,#1A3D8F 40%,#0D1F3C 100%);display:flex;align-items:center;justify-content:center;font-size:120px;opacity:.3;}
+.overview-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,31,60,.9) 0%,transparent 60%);border-radius:16px;}
+.overview-img-caption{position:absolute;bottom:20px;left:20px;}
+.overview-img-caption h3{font-family:var(--serif);font-size:26px;color:#fff;font-weight:600;}
+.overview-img-caption p{font-size:12px;color:rgba(255,255,255,.5);margin-top:4px;}
+.overview-text p{font-size:15px;color:var(--tm);line-height:1.8;margin-bottom:16px;}
+.overview-points{margin-top:24px;display:flex;flex-direction:column;gap:12px;}
+.op-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--ice);border-radius:10px;border:1px solid var(--ice2);}
+.op-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:6px;}
+.op-text{font-size:13.5px;color:var(--tm);font-weight:500;line-height:1.5;}
+
+/* ── TOWER ELEVATION ───────────────────────────────────── */
+.elevation-wrap{margin-top:40px;border-radius:20px;overflow:hidden;background:linear-gradient(170deg,#0a1628 0%,#0f2040 40%,#0d1b38 100%);padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.elevation-img-area{position:relative;border-radius:14px;overflow:hidden;background:rgba(255,255,255,.04);height:420px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.08);}
+.elev-towers{display:flex;align-items:flex-end;gap:12px;padding:20px;height:100%;}
+.tower{background:linear-gradient(180deg,rgba(59,130,246,.6) 0%,rgba(30,64,175,.8) 100%);border-radius:4px 4px 0 0;position:relative;}
+.tower-windows{position:absolute;inset:8px 6px;display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.tw{background:rgba(255,255,255,.15);border-radius:1px;}
+.tower-label{position:absolute;bottom:-28px;left:50%;transform:translateX(-50%);font-size:10px;color:rgba(255,255,255,.5);white-space:nowrap;text-align:center;}
+.elev-badge{position:absolute;top:14px;left:14px;background:rgba(37,99,235,.9);color:#fff;font-size:10px;font-weight:600;padding:4px 10px;border-radius:6px;letter-spacing:.5px;}
+.elevation-specs h3{font-family:var(--serif);font-size:30px;color:#fff;font-weight:600;margin-bottom:16px;}
+.elevation-specs p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:24px;}
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;}
+.spec-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px;}
+.sc-val{font-family:var(--serif);font-size:18px;color:#fff;font-weight:600;}
+.sc-lbl{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.7px;margin-top:3px;}
+
+/* ── AREA CONFIGURATIONS ───────────────────────────────── */
+.config-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
+.config-card{border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:box-shadow .2s,transform .2s;background:#fff;}
+.config-card:hover{box-shadow:var(--shl);transform:translateY(-4px);}
+.cc-header{background:var(--navy);padding:20px 22px;}
+.cc-type{font-family:var(--serif);font-size:22px;color:#fff;font-weight:600;margin-bottom:4px;}
+.cc-sub{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.8px;}
+.cc-body{padding:22px;}
+.cc-area-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.cc-area-val{font-family:var(--serif);font-size:24px;color:var(--blue);font-weight:600;}
+.cc-area-unit{font-size:11px;color:var(--ts);}
+.cc-features{display:flex;flex-direction:column;gap:8px;}
+.ccf-item{font-size:13px;color:var(--tm);display:flex;align-items:center;gap:8px;}
+.ccf-item::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--bm);flex-shrink:0;}
+.cc-cta{margin-top:18px;width:100%;background:var(--ice);color:var(--blue);border:1px solid var(--ice2);padding:10px;border-radius:8px;font-size:13px;font-weight:500;transition:all .15s;}
+.cc-cta:hover{background:var(--ice2);}
+
+/* ── CONNECTIVITY ──────────────────────────────────────── */
+.conn-wrap{margin-top:40px;}
+.conn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.conn-category{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px 22px;}
+.conn-cat-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.conn-cat-icon{width:28px;height:28px;background:var(--ice);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;}
+.conn-items{display:flex;flex-direction:column;gap:8px;}
+.conn-item{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:6px 0;border-bottom:1px solid var(--border);}
+.conn-item:last-child{border-bottom:none;}
+.conn-place{color:var(--tm);font-weight:500;}
+.conn-time{background:var(--ice);color:var(--blue);font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;white-space:nowrap;}
+
+/* ── AMENITIES ─────────────────────────────────────────── */
+.amenity-tabs{display:flex;gap:6px;margin-bottom:28px;flex-wrap:wrap;}
+.atab{padding:7px 18px;border-radius:20px;border:1px solid var(--border);background:#fff;color:var(--ts);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;}
+.atab.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+.amenity-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;}
+.amenity-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 14px;text-align:center;transition:all .15s;}
+.amenity-card:hover{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.07);transform:translateY(-2px);}
+.amenity-icon{font-size:26px;margin-bottom:8px;}
+.amenity-name{font-size:12px;font-weight:500;color:var(--tm);line-height:1.3;}
+
+/* ── PLAN HIGHLIGHT ────────────────────────────────────── */
+.plan-wrap{margin-top:40px;background:var(--navy);border-radius:20px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.plan-map{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px;min-height:340px;position:relative;}
+.plan-title{font-family:var(--serif);font-size:13px;color:rgba(255,255,255,.4);letter-spacing:.5px;margin-bottom:20px;text-transform:uppercase;}
+/* simplified site plan SVG */
+.plan-info h3{font-family:var(--serif);font-size:28px;color:#fff;font-weight:600;margin-bottom:14px;}
+.plan-info p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:24px;}
+.plan-legend{display:flex;flex-direction:column;gap:10px;}
+.pl-item{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.65);}
+.pl-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0;}
+
+/* ── INTERIORS ─────────────────────────────────────────── */
+.interiors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px;}
+.interior-card{border-radius:14px;overflow:hidden;position:relative;border:1px solid var(--border);}
+.ic-visual{height:200px;display:flex;align-items:center;justify-content:center;font-size:60px;opacity:.25;}
+.ic-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,31,60,.85) 0%,transparent 50%);}
+.ic-label{position:absolute;bottom:14px;left:14px;right:14px;}
+.ic-label h4{font-family:var(--serif);font-size:17px;color:#fff;font-weight:600;}
+.ic-label p{font-size:11.5px;color:rgba(255,255,255,.55);margin-top:3px;}
+
+/* ── DEVELOPER ─────────────────────────────────────────── */
+.dev-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:40px;}
+.dev-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.dev-stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px;}
+.ds-val{font-family:var(--serif);font-size:24px;color:#fff;font-weight:600;}
+.ds-lbl{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.6px;margin-top:3px;}
+.dev-text h3{font-family:var(--serif);font-size:30px;color:#fff;font-weight:600;margin-bottom:14px;}
+.dev-text p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.78;margin-bottom:14px;}
+.dev-award{display:flex;align-items:center;gap:10px;background:rgba(37,99,235,.2);border:1px solid rgba(37,99,235,.3);border-radius:10px;padding:12px 16px;margin-top:8px;}
+.dev-award-text{font-size:13px;color:rgba(255,255,255,.75);}
+
+/* ── CTA SECTION ───────────────────────────────────────── */
+.cta-section{background:linear-gradient(135deg,var(--navy) 0%,#102255 100%);padding:72px 24px;position:relative;overflow:hidden;}
+.cta-section::before{content:'';position:absolute;right:-80px;top:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(37,99,235,.25) 0%,transparent 70%);pointer-events:none;}
+.cta-in{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start;position:relative;z-index:1;}
+.cta-text h2{font-family:var(--serif);font-size:38px;color:#fff;font-weight:600;margin-bottom:12px;}
+.cta-text p{font-size:15px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:24px;}
+.cta-points{display:flex;flex-direction:column;gap:10px;}
+.cta-pt{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.7);}
+.cta-pt::before{content:'✓';background:var(--blue);color:#fff;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+.cta-form{background:#fff;border-radius:18px;padding:30px;box-shadow:var(--shl);}
+.cta-form h3{font-family:var(--serif);font-size:22px;color:var(--navy);margin-bottom:5px;font-weight:600;}
+.cta-form-sub{font-size:13px;color:var(--ts);margin-bottom:20px;}
+.fg{margin-bottom:12px;}
+.fg label{font-size:11.5px;font-weight:600;color:var(--td);display:block;margin-bottom:4px;}
+.fg input,.fg select{width:100%;padding:9px 12px;font-size:14px;font-family:var(--sans);border:1px solid var(--border);border-radius:8px;outline:none;transition:border-color .15s;background:#fff;}
+.fg input:focus,.fg select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.1);}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.form-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:12px;border-radius:10px;font-size:14px;font-weight:500;margin-top:6px;transition:background .15s;cursor:pointer;}
+.form-submit:hover{background:var(--royal);}
+.form-note{font-size:11px;color:var(--ts);text-align:center;margin-top:10px;}
+.form-success{display:none;text-align:center;padding:20px 0;}
+.form-success-icon{font-size:48px;margin-bottom:10px;}
+.form-success h4{font-family:var(--serif);font-size:20px;color:var(--navy);margin-bottom:6px;font-weight:600;}
+.form-success p{font-size:13px;color:var(--ts);}
+
+/* ── FOOTER ────────────────────────────────────────────── */
+.footer{background:var(--navy);padding:48px 24px 24px;}
+.footer-in{max-width:1200px;margin:0 auto;}
+.footer-logo img{height:34px;width:auto;filter:invert(1) brightness(10);}
+.footer-tag{font-size:12.5px;color:rgba(255,255,255,.4);margin-top:10px;max-width:260px;line-height:1.7;}
+.footer-rera{font-size:9.5px;color:rgba(255,255,255,.25);margin-top:8px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px;}
+.footer-col h4{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.85);margin-bottom:13px;}
+.footer-col a,.footer-col span{display:block;font-size:12.5px;color:rgba(255,255,255,.45);margin-bottom:8px;transition:color .12s;cursor:pointer;}
+.footer-col a:hover{color:var(--sky);}
+.footer-contact{display:flex;align-items:center;gap:7px;font-size:12.5px;color:rgba(255,255,255,.5);margin-bottom:8px;}
+.footer-contact a{color:rgba(255,255,255,.5);} .footer-contact a:hover{color:var(--sky);}
+.footer-sobha{color:var(--sky)!important;font-weight:500;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.3);margin-bottom:4px;}
+.footer-disc{font-size:10px;color:rgba(255,255,255,.2);max-width:520px;line-height:1.6;}
+
+/* ── MODAL ─────────────────────────────────────────────── */
+.mo{position:fixed;inset:0;background:rgba(13,31,60,.65);backdrop-filter:blur(4px);z-index:999;display:none;align-items:center;justify-content:center;padding:20px;}
+.mo.open{display:flex;}
+.modal{background:#fff;border-radius:18px;padding:32px;max-width:440px;width:100%;position:relative;box-shadow:var(--shl);}
+.mc{position:absolute;top:14px;right:14px;background:var(--slate);border:none;width:30px;height:30px;border-radius:50%;font-size:18px;color:var(--ts);cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.modal h3{font-family:var(--serif);font-size:22px;color:var(--navy);margin-bottom:6px;font-weight:600;}
+.modal-sub{font-size:13px;color:var(--ts);margin-bottom:20px;}
+.succ{text-align:center;padding:16px 0;display:none;}
+.succ-icon{font-size:46px;margin-bottom:10px;}
+.succ h4{font-family:var(--serif);font-size:20px;color:var(--navy);margin-bottom:7px;font-weight:600;}
+.succ p{font-size:13px;color:var(--ts);}
+
+/* ── WA FLOAT ──────────────────────────────────────────── */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:9px;}
+.wa-tooltip{background:var(--navy);color:#fff;font-size:12px;font-weight:500;padding:6px 13px;border-radius:8px;white-space:nowrap;opacity:0;transform:translateX(8px);transition:all .2s;pointer-events:none;}
+.wa-float:hover .wa-tooltip{opacity:1;transform:translateX(0);}
+.wa-wrap{position:relative;width:58px;height:58px;}
+.wa-pulse{position:absolute;inset:0;border-radius:50%;background:#25D366;animation:wapulse 2.2s ease-out infinite;z-index:0;}
+.wa-btn{position:relative;z-index:1;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s;text-decoration:none;}
+.wa-btn:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.55);}
+.wa-btn svg{width:30px;height:30px;fill:#fff;flex-shrink:0;}
+@keyframes wapulse{0%{transform:scale(1);opacity:.55}70%{transform:scale(1.6);opacity:0}100%{transform:scale(1.6);opacity:0}}
+
+@media(max-width:900px){
+  .hero-in,.overview-grid,.dev-wrap,.config-grid,.plan-wrap,.cta-in,.conn-grid,.interiors-grid,.elevation-wrap{grid-template-columns:1fr;}
+  .stats-in{grid-template-columns:repeat(3,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .hero h1{font-size:40px;}
+  .section-title{font-size:32px;}
+}
+@media(max-width:640px){
+  .nav-links a:not(.nav-sobha){display:none;}
+  .stats-in{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr;}
+  .spec-grid,.dev-stats,.fg-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <div class="nav-in">
+    <a href="index.html" class="nav-logo"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOgAAABPCAYAAADhsIkuAAAN8klEQVR4nO2dedAcRRXAfzN7JdkcJCQUiCiUpkSrRBSVsqjSP/QfpQICQYkXlxqB4ka0QEVBQCgOUVBBRJASEFIgJXIU5QEoQkCOgAgxJjEhiQRyfvmu3Z0Z/5hdWZY93uvpOb5886vqqu/ofu/1bL/p3u7X3ZCTk5OTk5OTk5OTk5OTkwxO2gbk7Bz8eW0QrBseYZvnMO4DFCkUCjQaDQLHx3MgcHwcoOBDyXMB2v7n4uMSOC7g4+BT8utMc3zetusM9t3DZW/HmXTttZi2ATkTn9v+XgvufWolG2oNtrpFGsUKjjsFr+5Rcl38pnMGjg+AG4RO6jbL+7h4jkvgOHhNFywEHuVgnPLYELtPc1mz12yWjQTBftMml5PmDpoTiQc2BMF9y9by4ugwY9UZjBSmEBSrTC1WaYzWKdPWU7qhk/pO6KRuAKWGDzh4FGm4Lp5TIHDACXyKjDO9WGV8+DXGVr5CtTIl3cqmQO6gOZFYvWmYtUMjjJTKlHaZzfi4w3jDBVy8oILjgBOA7wR4+GFywt7TBTyn6aBOkbrr4jngOeAEBUoU8D2YUZnOUK3BxuE6/wqCYP4kGuq6g7Pk5PTGqQWUPZeKX6RQd3FrUPGLlAMo+eDWoeyDU3MIxgKml0vUhmq4DShQAKeI75bwaDon4LtAAXBdAorglJhWncXQ8CillOubNLmD5kRi1+p0prsliuMeZQ9mlsqUAh+/DiU3bGANz6c6HRreGF4NqiWXaqmEU6/j+B6u71EIoOhDMYCSB2UPSp5HtRDgjw4xun0TFcefdBNF+RA3JxJ7zoZ95s5j24Z1bN+2maAylYJTwiGgUCnjlKFYcFi/aT1z5s3Fqw1TLHpMLZbxdgxTKVUgcPEdD993w++fTkAhaFCmRnl8iFllj/m7zuGAd+2ZdnUTZ1K9jXLi4dHNQfDkqq0sf2UjW30Hz63QaHh4dZ96fZzqjCrFqSWGduygWCgwun0Hu82YQ6NWx3UCAlx8wAccpwD4FIFiUMMZ28bb587kfXvvwaHzZ0269jrpKpwTD6uDINgyXMctlCg74IyD60G9AaUKlGbCq1vqlAsl9p/lOM9vCgIXcCrh987ACR00AFqDWNeBGVOYdMPadjQVvxB4D1AhfKa15s8jQAkYB3YAX7ZsI8DpwAeAuU3dY8C0ps4GMB3Y2sxbBVYDp7SVXwKUCduASzi0d5plozLStOV+4JoBeQ8FFgK7NHV7hM/OIZwWgbBOrwEvA5sIn/MO4FYLtk4mfkHYXkycu31uZgewEVgB/MiCXbGwgPDlJklfi0G/VHd7anGOYXltWi2ox4MW9a0BfgycKdCbJc7ijZ9PHPyJ+D/vJwjbVmaQGn5SSnpbabyj/JUGMkzSC4K6PB+zDU8A3xLYkSYtWy+MUcc/iPc5d6aXCUd5qSI19oQUdLanTq4wlKNNKwX1WZaQLQHwGPAFgU1Jcgz9PytbPEdyz3lQ+4tEltdBHzMoc6p1K+TsSFF3Nw4EbgbWpm1IG1/t+P2ImPR0jqKSJCDsFFJRnFQPeoNCXyud30NWUj3oCkG9kuxBO9OzAvviptMmyajDhLi/SkjSPTYqksUe9FzgWGWZpcB3YrBFw0jK+gexH2HDWZiS/m7fjfeJSVeaPWiLgxk8q2+VJHrQTyv0tNLGATKT6kH/Kahfmj1oe7pRYKttxnvYcn0MurLQg7ZSJLLWg96lzN8AdovDEAMk621ZWXA/GrgzYZ3lHn8/OgZdWYqpXx6lcJYc1ORtc7h1K8yppG2AksNIbuG934RfkTCAwybbLcuLwvwohbMSLP8XgzJnA7+zbMeZwKuEb+BWlFTnm7+zFxwGphBGrtjkSKAOzCSMgDoAeD+wO7CvJR0nE77hr7YkrxcHDvj/IuBui/puJJy0CwifXT+8jt87O60qsAdhe3g34Wet5a/AQQblVEjH3Ccq5V6jkN1KP1HIv0whN26k341eE8q7TigvzXpfkgEbbPMS2XrGoDBE46DnKuS20jKl3RPRQTcp5Z4GrBLK7pYeN6/SQNYIbbgsRhvi4HJ2cgc9TCEzSkUnooNuMZR/klB+t/QlQ52DyFQjtsydyOt2nomCNCeJTGYRszILakrcjfAawme0waDsxZZtAfh9DDKzhGaScp6JgrQcdKtBmc/bNmIn5i2EgfPaMraf8aeU+a1E32QUo1n+NBx0KTBLWeZS4JYYbNmZ+TD6ofIxFvWbRHYdbFF/1ui1DtyXpB30OuBDyjJ/BL4Rgy1pIB3iDloakDJHmf8TlvSC+T7VMyzakCVqJoWSdNDFwFeUZdYBH4/Blqxj87vq9y3KkrKAcP3WhMttGpIhjIIn4nDQXo3rZway3hrFkAySxkzlt5X577CgM+p32UUWbEiC4xR5C4OzvJk4HLTe5W8mQ7aJPmPbDekZSLbDBq9S5N3Pgr7PRix/vAUbkkATPfYHEwVxOGinzJXone0QS7ZkjWnCfFXLek9T5I0UO4quV+nFRPhaox0NGYWlxhGL296V34N+z98N2I+xlbKYN56M8GuiD7eKhCcbAPwQ2B8Y5XVnrRPO8HmELzcf2flGWtYTLqUMIurIxVZc7ylEC+ZfRPjsB+0NHdRJjRPGZs8A9iJ82WlXIZ5W5jdCGjGxuJn/u4oyrfS3GOzWRBLFlc6KoV5abkJur+lL6RCFjkHpFUMbAB62aIeNZEwcQ9xWD2oS2vQRm4ZkiKlpG4Auhtl0iC09cnVYkCfKPl/t8lKcRBoNxeGgH8XsrbEzTgq10AYMxIFm+cJoxhH4pCCPT7jNTcK9hnYYBQXExLlRCsfhoCYzeBNlWt2UibaZu9tM/CCkwfZnAL8U5pU4fDc693imxVXAb6MIyMKJChcAt6VtRMxk4TlrMFl/lu5iai35/FyYv9dpjf3IgoP+Bt3seVey0HDSPo0vCbLQYDSMGpQZdGoChHtDW3SekdsL7QmPWeBq4CgbgrJw5MkK4J1pGxEzNi5pSpKtyvw3CfN1nuC3kcGTQSa9eRoRWy2szqVkoQd9B+aTARMF00mXtNCeKyv9/nlBx+/S+1mkw+G02E64lGZ9ojMLDgrhZECih/wmzNy0DUB3LaSmB5IOVf/b5W/SQIQ4rrS0xd2EgQuxBPlnYYjb4kTCvaLS4VIcPEg4HJ3C6410UG/SqzG33qajRJxqt4QmfO7mwVn+j3Tt8wc9/v4c8F5B+W/2kZEmh6ZtQIukoi5s38iVpTOJbiJcB2w09TWav9c67Lg9Bt3biOc5RJV5mrD8eoVNmtvNunGEonyA3Rv9jJkQoVFdyJKDPiG0I46b0qTPQHOekfRUxocs2SZF6qD97tPRHsAWC0l8B9VsdWphs8JZmqCRBiwY7b7vg2bT9nMxyP3YgP8/LJTzU2E+G+1aOydypQWdkTDpCS+OUH6VJbuvVOiMG+nlSZst6x0T6g2AzwllHq+QKcGmLOkN24PWey9S2GX7M1OjdbDOE9outSDDhCw5qHToZfPD/rpQp/YZPCmUJ40Sy6KDauxKov30RWPoMz1kXK+UEwC3RrR7sjuo5llrdrxIZUpv0ZZ+TpLJIulzljjo7UJZAbJLnGNDauSaXgKaLFXIaqWLItg9mR10lVBfK50tlHueQqYGWzJtOqjGriTaUE8kxnVbjDaV1ZlMd7xMVgd9RKjLpP5SedoJQulS0KBhs20HfUAoLyC83iMVbDdwEyc1YSI6qPbypE40a56tJJ0hRSFTi60lMdsOisKuAPmwfiA2l1m0cYjS2cJ2knCiicwZhM/I5Exa6WJ7v8t42zF5yWThaJheaO6wPSw2K/rQ742xuE+5fpw/QG63tFKpYyL2oOuUcq8Wyu2VNFujpDLPUdahxXqh/KV9ZKzoU860B0UoM6m2JDbuMxHlambJWmm1Qv5EdNCXB8g5kvDkw+1Cef3SfQr7NXdimnKkBR3PCstrHXSdwrYblbIj080Ik93u3Ximh/x+SRrpoXHQKOl+gS2aGNHthDdtb4nR5m0Cm9vZLJS7Wim3E6n9V/Qo/7SwvNZBv6iwLVDKjkynctvba0wa2CUCuUk56H8EtmgcNImkRSo36l2j9yp0deMFYVmTkyM0E3Cak+cj0674kQR0SNOgvYJJOehyQf2y4qBjAls7WaKQH5VjFbpO7VL+RWFZEwddpLDNxrMQ01Komc3Schy6yrdSv+/BSTnoakH9suCgzwjs7IZUvvbi4Kj6nuxSNq7voFrbAszOh1azoKlsKAFd12HW8HqRlINKFqjTdlDTmdVLFDps8VAEndI4YVMH/Z7CNskh3ZFZSLIHX0kfcHvqNeGRO6guxrYbGl02keo8vaPcU8Jypg6qsS3SM5EGKiwh2eNRPoj+4c0kPCWukygfggbJ9Q62G/AgHiUMIIlypaDmrs+7I+jpxlZhvs7ZXGlbjbIx/lpFXuPPPSuHhnVDelVfO/N484MzvelZi2STdVLXW1zb1HWQBVmaGOglFvS1ozkbqf1OUenG+NkK+Z1Iz2JqId2IMKE4AbMhXftxjppNt1GS5JKcx2PS/TxhYHrUoJFupDW81er/d1uZx4RltkS07VeG9u1UmDppi5MNy2vTS4K63GUoe4gwimU54Sz6VSR3ybHUxlti0r9cqL99juQOYZlBEVsS0n6BZYqFzQThjoEFzZ+Pavt5QWchejfmbnnjZuHgLJljQVsCOLzj/1auOehD3PJtsLPeCp+Tk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTkzr/A8CxQgx1Vs9QAAAAAElFTkSuQmCC" alt="Kedar Estate and Investments"></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#localities">Localities</a>
+      <a href="index.html#builders">Builders</a>
+      <a href="index.html#about">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="sobha-crescent.html" class="nav-sobha"><span class="nav-sobha-badge">NEW</span>Sobha Crescent</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="tel:+918595221631" class="nav-phone">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+        +91-8595221631
+      </a>
+      <button class="nav-cta" onclick="openModal()">Book EOI</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-in">
+    <div>
+      <div class="hero-crumb">
+        <a href="index.html">Home</a><span>›</span>
+        <a href="index.html#localities">Golf Course Ext.</a><span>›</span>
+        <span style="color:rgba(255,255,255,.65)">Sobha Crescent</span>
+      </div>
+      <div class="hero-badge"><span class="hero-dot"></span>NEW LAUNCH &nbsp;·&nbsp; EOI OPEN</div>
+      <h1>Sobha<br><em>Crescent</em></h1>
+      <div class="hero-dev">BY SOBHA DEVELOPERS &nbsp;·&nbsp; PASSION AT WORK</div>
+      <p class="hero-desc">An address born from the idea of rising gracefully yet powerfully. Designed for those who live ambitiously, recharge with purpose, and embrace the finest indulgences — with sweeping Aravalli vistas across 12 acres of low-density living.</p>
+      <div class="hero-chips">
+        <span class="hchip">Sector 63A, Gurugram</span>
+        <span class="hchip">HARERA Approved</span>
+        <span class="hchip">Golf Course Extension Road</span>
+        <span class="hchip">RC/REP/HARERA/GGM/1054/786/2026/26</span>
+      </div>
+      <div class="hero-btns">
+        <button class="hbtn-primary" onclick="openModal()">Book Your EOI — ₹10 Lakhs</button>
+        <a href="tel:+918595221631" class="hbtn-sec">Call +91-8595221631</a>
+      </div>
+    </div>
+    <div>
+      <div class="hero-card">
+        <div class="hero-card-title">Project at a Glance</div>
+        <div class="hc-row">
+          <span class="hc-label">Starting Price</span>
+          <span class="hc-val">On Request<small>EOI ₹10 Lakhs</small></span>
+        </div>
+        <div class="hc-row">
+          <span class="hc-label">Configurations</span>
+          <span class="hc-val">3 &amp; 4 BHK<small>Grande &amp; Grande+DH</small></span>
+        </div>
+        <div class="hc-row">
+          <span class="hc-label">Size Range</span>
+          <span class="hc-val">2,277 – 2,966<small>sq ft (SBA)</small></span>
+        </div>
+        <div class="hc-row">
+          <span class="hc-label">Total Residences</span>
+          <span class="hc-val">336<small>Phase 1 · 2 Towers</small></span>
+        </div>
+        <div class="hc-row">
+          <span class="hc-label">Floors</span>
+          <span class="hc-val">G + 42<small>Tower 3 &amp; Tower 4</small></span>
+        </div>
+        <div class="hc-row">
+          <span class="hc-label">Status</span>
+          <span class="hc-val">New Launch<small>HARERA Approved</small></span>
+        </div>
+        <p class="hero-rera">RC/REP/HARERA/GGM/1054/786/2026/26 dated 03.04.2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<div class="stats-bar">
+  <div class="stats-in">
+    <div class="stat-item"><div class="stat-val">12</div><div class="stat-lbl">Acres Total</div></div>
+    <div class="stat-item"><div class="stat-val">4.96</div><div class="stat-lbl">Acres Phase 1</div></div>
+    <div class="stat-item"><div class="stat-val">336</div><div class="stat-lbl">Residences</div></div>
+    <div class="stat-item"><div class="stat-val">G+42</div><div class="stat-lbl">Floors</div></div>
+    <div class="stat-item"><div class="stat-val">430m</div><div class="stat-lbl">Nature Trail</div></div>
+    <div class="stat-item"><div class="stat-val">50m</div><div class="stat-lbl">Lap Pool</div></div>
+  </div>
+</div>
+
+<!-- ── PROJECT OVERVIEW ── -->
+<section class="section">
+  <div class="section-in">
+    <div class="section-eyebrow">The Statement Your Life Deserves</div>
+    <div class="section-title">Architecting the <em>NCR Skyline</em><br>since 2011 — now at Sector 63A</div>
+    <p class="section-sub">Golf Course Extension Road stands at the pinnacle of Gurugram's new growth chapter, where location and connectivity converge. Recognising its potential, SOBHA makes its debut here with SOBHA Crescent.</p>
+    <div class="overview-grid">
+      <div class="overview-img">
+        <div class="overview-img-inner">🏙️</div>
+        <div class="overview-img-overlay"></div>
+        <div class="overview-img-caption">
+          <h3>Sculpting the Horizon</h3>
+          <p>Artist's Impression · Evening View</p>
+        </div>
+      </div>
+      <div class="overview-text">
+        <p>Presenting SOBHA Crescent — two 42-storey towers rising over a 12-acre, low-density campus, delivering an address made for those who live ambitiously and recharge with purpose. Every detail — from the cascading tiered water walls at the entrance to the double-glazed glass façades engineered for year-round thermal comfort — reflects SOBHA's philosophy of perfection.</p>
+        <p>All 336 residences are corner homes, precisely aligned to prevent direct overlooking. Each has at least two expansive balconies with sweeping Aravalli vistas. Lavish lift lobbies and six high-speed elevators combine elegance with effortless efficiency.</p>
+        <div class="overview-points">
+          <div class="op-item"><div class="op-dot"></div><div class="op-text">Dual gateways — seamless peripheral vehicular circulation</div></div>
+          <div class="op-item"><div class="op-dot"></div><div class="op-text">Grand entrance with cascading tiered water walls</div></div>
+          <div class="op-item"><div class="op-dot"></div><div class="op-text">All homes are corner residences — unparalleled exclusivity</div></div>
+          <div class="op-item"><div class="op-dot"></div><div class="op-text">Double-glazed façade — year-round thermal comfort &amp; noise reduction</div></div>
+          <div class="op-item"><div class="op-dot"></div><div class="op-text">Up to 12m-long balconies — panoramic Aravalli &amp; city views</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TOWER ELEVATION ── -->
+<div style="padding:0 24px 72px">
+  <div class="section-in">
+    <div class="elevation-wrap">
+      <div class="elevation-img-area">
+        <div class="elev-towers">
+          <div class="tower" style="width:80px;height:320px">
+            <div class="tower-windows">
+              <div class="tw" style="height:8px"></div><div class="tw" style="height:8px"></div><div class="tw" style="height:8px"></div>
+              <div class="tw" style="height:8px"></div><div class="tw" style="height:8px"></div><div class="tw" style="height:8px"></div>
+              <div class="tw" style="height:8px"></div><div class="tw" style="height:8px"></div><div class="tw" style="height:8px"></div>
+              <div class="tw" style="height:8px"></div><div class="tw" style="height:8px"></div><div class="tw" style="height:8px"></div>
+            </div>
+            <div class="tower-label">Tower 3</div>
+          </div>
+          <div class="tower" style="width:80px;height:290px;margin-bottom:30px">
+            <div class="tower-windows">
+              <div class="tw" style="height:8px"></div><div class="tw" style="height:8px"></div><div class="tw" style="height:8px"></div>
+              <div class="tw" style="height:8px"></div><div class="tw" style="height:8px"></div><div class="tw" style="height:8px"></div>
+              <div class="tw" style="height:8px"></div><div class="tw" style="height:8px"></div><div class="tw" style="height:8px"></div>
+            </div>
+            <div class="tower-label">Tower 4</div>
+          </div>
+        </div>
+        <div class="elev-badge">PHASE 1 · G+42 FLOORS</div>
+      </div>
+      <div class="elevation-specs">
+        <h3>Sculpting the Horizon with Poise</h3>
+        <p>Two masterpieces of engineering and enduring craftsmanship, strategically positioned for maximum views and privacy. Every element conceived for refined living.</p>
+        <div class="spec-grid">
+          <div class="spec-card"><div class="sc-val">2 Towers</div><div class="sc-lbl">Tower 3 &amp; 4</div></div>
+          <div class="spec-card"><div class="sc-val">G + 42</div><div class="sc-lbl">Floors Each</div></div>
+          <div class="spec-card"><div class="sc-val">3 Basements</div><div class="sc-lbl">Parking Levels</div></div>
+          <div class="spec-card"><div class="sc-val">757</div><div class="sc-lbl">Car Parks</div></div>
+          <div class="spec-card"><div class="sc-val">4 Units</div><div class="sc-lbl">Per Floor</div></div>
+          <div class="spec-card"><div class="sc-val">6 Lifts</div><div class="sc-lbl">High-Speed</div></div>
+        </div>
+        <button class="hbtn-primary" onclick="openModal()" style="width:100%;padding:12px">Download Tower Plans →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── AREA CONFIGURATIONS ── -->
+<section class="section bg-slate">
+  <div class="section-in">
+    <div class="section-eyebrow">Area Configurations</div>
+    <div class="section-title">Choose Your <em>Perfect Residence</em></div>
+    <p class="section-sub">Three thoughtfully designed configurations — every unit a corner home with at least two expansive balconies and sweeping views.</p>
+    <div class="config-grid">
+      <div class="config-card">
+        <div class="cc-header">
+          <div class="cc-type">3 Bed Residence Grande</div>
+          <div class="cc-sub">3 Bedrooms + 3 Bathrooms</div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-area-row">
+            <div><div class="cc-area-val">2,277 – 2,634</div><div class="cc-area-unit">sq ft (SBA)</div></div>
+            <div style="text-align:right"><div class="cc-area-val" style="font-size:16px">211 – 244</div><div class="cc-area-unit">sq m</div></div>
+          </div>
+          <div class="cc-features">
+            <div class="ccf-item">Palatial living &amp; dining area</div>
+            <div class="ccf-item">Exquisite master bedroom</div>
+            <div class="ccf-item">Expansive multi-access balcony</div>
+            <div class="ccf-item">Ergonomic open kitchen</div>
+            <div class="ccf-item">Vibrant kids' room</div>
+          </div>
+          <button class="cc-cta" onclick="openModal()">Get Floor Plan &amp; Pricing →</button>
+        </div>
+      </div>
+      <div class="config-card" style="border:2px solid var(--blue)">
+        <div style="background:var(--blue);padding:5px 22px;font-size:10px;font-weight:700;color:#fff;letter-spacing:.8px;text-align:center">MOST POPULAR</div>
+        <div class="cc-header">
+          <div class="cc-type">4 Bed Residence Grande</div>
+          <div class="cc-sub">4 Bedrooms + 4 Bathrooms</div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-area-row">
+            <div><div class="cc-area-val">2,669</div><div class="cc-area-unit">sq ft (SBA)</div></div>
+            <div style="text-align:right"><div class="cc-area-val" style="font-size:16px">248</div><div class="cc-area-unit">sq m</div></div>
+          </div>
+          <div class="cc-features">
+            <div class="ccf-item">Grand double-height entrance</div>
+            <div class="ccf-item">Private balcony to master bedroom</div>
+            <div class="ccf-item">Inviting guest room</div>
+            <div class="ccf-item">Sleek bathroom with glass partition</div>
+            <div class="ccf-item">Walk-in wardrobe provision</div>
+          </div>
+          <button class="cc-cta" onclick="openModal()" style="background:var(--blue);color:#fff;border:none">Get Floor Plan &amp; Pricing →</button>
+        </div>
+      </div>
+      <div class="config-card">
+        <div class="cc-header">
+          <div class="cc-type">4 Bed Grande + DH</div>
+          <div class="cc-sub">4 BHK · Double Height</div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-area-row">
+            <div><div class="cc-area-val">2,966</div><div class="cc-area-unit">sq ft (SBA)</div></div>
+            <div style="text-align:right"><div class="cc-area-val" style="font-size:16px">275</div><div class="cc-area-unit">sq m</div></div>
+          </div>
+          <div class="cc-features">
+            <div class="ccf-item">Signature double-height living</div>
+            <div class="ccf-item">Up to 12m-long panoramic balcony</div>
+            <div class="ccf-item">Aravalli-facing private terrace</div>
+            <div class="ccf-item">Premium ultra-luxury finishes</div>
+            <div class="ccf-item">Limited availability</div>
+          </div>
+          <button class="cc-cta" onclick="openModal()">Get Floor Plan &amp; Pricing →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AMENITIES ── -->
+<section class="section">
+  <div class="section-in">
+    <div class="section-eyebrow">World-Class Amenities</div>
+    <div class="section-title">An Ecosystem of <em>Movement, Wellness</em> &amp; Vitality</div>
+    <p class="section-sub">Four thoughtfully curated spheres offer a rich tapestry of experiences, harmonising moments of solitude with togetherness — across 20+ curated amenities.</p>
+    <div style="margin-top:36px">
+      <div class="amenity-tabs">
+        <button class="atab active" onclick="filterAmenity('all',this)">All Amenities</button>
+        <button class="atab" onclick="filterAmenity('rec',this)">Recreational Hub</button>
+        <button class="atab" onclick="filterAmenity('park',this)">Parks &amp; Plazas</button>
+        <button class="atab" onclick="filterAmenity('active',this)">Active Arena</button>
+        <button class="atab" onclick="filterAmenity('kids',this)">Kids' Bay</button>
+      </div>
+      <div class="amenity-grid" id="amenityGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONNECTIVITY ── -->
+<section class="section bg-slate">
+  <div class="section-in">
+    <div class="section-eyebrow">Connectivity</div>
+    <div class="section-title">Set in the <em>Vibrant Work-Life Grid</em></div>
+    <p class="section-sub">A distinguished circle of global corporate campuses, hospitality landmarks, and high-end cultural avenues defines Sector 63A — adding a social dimension to distinguished living.</p>
+    <div class="conn-wrap">
+      <div class="conn-grid">
+        <div class="conn-category">
+          <div class="conn-cat-title"><div class="conn-cat-icon">🛣️</div>Key Roads</div>
+          <div class="conn-items">
+            <div class="conn-item"><span class="conn-place">Southern Peripheral Road</span><span class="conn-time">15 min</span></div>
+            <div class="conn-item"><span class="conn-place">Sohna Elevated Road</span><span class="conn-time">12 min</span></div>
+            <div class="conn-item"><span class="conn-place">Faridabad Road</span><span class="conn-time">10 min</span></div>
+            <div class="conn-item"><span class="conn-place">Dwarka Expressway</span><span class="conn-time">20 min</span></div>
+            <div class="conn-item"><span class="conn-place">Delhi–Mumbai Expressway</span><span class="conn-time">25 min</span></div>
+          </div>
+        </div>
+        <div class="conn-category">
+          <div class="conn-cat-title"><div class="conn-cat-icon">🏢</div>Corporate Hubs</div>
+          <div class="conn-items">
+            <div class="conn-item"><span class="conn-place">International Tech Park</span><span class="conn-time">2 min</span></div>
+            <div class="conn-item"><span class="conn-place">TATA Intellion</span><span class="conn-time">4 min</span></div>
+            <div class="conn-item"><span class="conn-place">Good Earth Business Bay</span><span class="conn-time">5 min</span></div>
+            <div class="conn-item"><span class="conn-place">Capital Cyberscape</span><span class="conn-time">8 min</span></div>
+            <div class="conn-item"><span class="conn-place">Cyber City</span><span class="conn-time">29 min</span></div>
+          </div>
+        </div>
+        <div class="conn-category">
+          <div class="conn-cat-title"><div class="conn-cat-icon">🎓</div>Education</div>
+          <div class="conn-items">
+            <div class="conn-item"><span class="conn-place">The Heritage School</span><span class="conn-time">14 min</span></div>
+            <div class="conn-item"><span class="conn-place">The Knowledge Habitat</span><span class="conn-time">16 min</span></div>
+            <div class="conn-item"><span class="conn-place">Lotus Valley International</span><span class="conn-time">16 min</span></div>
+            <div class="conn-item"><span class="conn-place">DPS International</span><span class="conn-time">20 min</span></div>
+          </div>
+        </div>
+        <div class="conn-category">
+          <div class="conn-cat-title"><div class="conn-cat-icon">🏥</div>Healthcare</div>
+          <div class="conn-items">
+            <div class="conn-item"><span class="conn-place">Motherhood Hospital</span><span class="conn-time">17 min</span></div>
+            <div class="conn-item"><span class="conn-place">CK Birla Hospital</span><span class="conn-time">18 min</span></div>
+            <div class="conn-item"><span class="conn-place">Fortis Gurugram</span><span class="conn-time">20 min</span></div>
+            <div class="conn-item"><span class="conn-place">Medanta The Medicity</span><span class="conn-time">30 min</span></div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:11px;color:var(--ts);margin-top:14px;text-align:center">Represents tentative travel time. Actual directions may vary.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── INTERIORS ── -->
+<section class="section">
+  <div class="section-in">
+    <div class="section-eyebrow">Timeless Interiors</div>
+    <div class="section-title">Workmanship <em>of Wonder</em></div>
+    <p class="section-sub">Every nook, dimensioned for abundant light, ventilation, and privacy, is imbued with exceptional finesse and finish — conceived with timelessness by the atelier of exactness.</p>
+    <div class="interiors-grid">
+      <div class="interior-card">
+        <div class="ic-visual" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">🛋️</div>
+        <div class="ic-overlay"></div>
+        <div class="ic-label">
+          <h4>Palatial Living &amp; Dining</h4>
+          <p>Voluminous, sun-drenched — opens onto sweeping Aravalli balcony</p>
+        </div>
+      </div>
+      <div class="interior-card">
+        <div class="ic-visual" style="background:linear-gradient(135deg,#0d1b2a,#1b2838)">🛏️</div>
+        <div class="ic-overlay"></div>
+        <div class="ic-label">
+          <h4>Exquisite Master Bedroom</h4>
+          <p>Tucked for seclusion · Walk-in wardrobe · Private balcony</p>
+        </div>
+      </div>
+      <div class="interior-card">
+        <div class="ic-visual" style="background:linear-gradient(135deg,#1a2535,#0f1a2a)">🍽️</div>
+        <div class="ic-overlay"></div>
+        <div class="ic-label">
+          <h4>Ergonomic Open Kitchen</h4>
+          <p>Intuitive work triad · Adjoining utility · Premium finishes</p>
+        </div>
+      </div>
+    </div>
+    <div class="interiors-grid" style="margin-top:14px">
+      <div class="interior-card">
+        <div class="ic-visual" style="background:linear-gradient(135deg,#162032,#0c1520)">🪟</div>
+        <div class="ic-overlay"></div>
+        <div class="ic-label">
+          <h4>Sprawling Balcony</h4>
+          <p>Up to 12m long · Panoramic Aravalli &amp; city vistas</p>
+        </div>
+      </div>
+      <div class="interior-card">
+        <div class="ic-visual" style="background:linear-gradient(135deg,#1a2535,#131d2e)">🛁</div>
+        <div class="ic-overlay"></div>
+        <div class="ic-label">
+          <h4>Sleek Bathroom</h4>
+          <p>Resplendent tiles · Premium fixtures · Glass partition</p>
+        </div>
+      </div>
+      <div class="interior-card">
+        <div class="ic-visual" style="background:linear-gradient(135deg,#0e1a2a,#1a2840)">🎨</div>
+        <div class="ic-overlay"></div>
+        <div class="ic-label">
+          <h4>Vibrant Kids' Room</h4>
+          <p>Whimsical energy · Abundant natural light · Safe spaces</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SITE PLAN ── -->
+<div style="padding:0 24px 72px">
+  <div class="section-in">
+    <div class="plan-wrap">
+      <div>
+        <div class="plan-title">Landscape Plan — Phase 1</div>
+        <!-- Simplified SVG site plan -->
+        <svg viewBox="0 0 340 280" style="width:100%;height:auto;opacity:.85" xmlns="http://www.w3.org/2000/svg">
+          <!-- Roads -->
+          <rect x="0" y="0" width="340" height="280" rx="10" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.1)" stroke-width="0.5"/>
+          <rect x="20" y="20" width="300" height="240" rx="8" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="0.5"/>
+          <!-- Green landscape band -->
+          <rect x="30" y="30" width="280" height="220" rx="6" fill="rgba(34,197,94,.07)"/>
+          <!-- Nature trail outline -->
+          <rect x="40" y="40" width="260" height="200" rx="60" fill="none" stroke="rgba(34,197,94,.3)" stroke-width="2" stroke-dasharray="6,3"/>
+          <!-- Tower 3 -->
+          <rect x="90" y="90" width="70" height="80" rx="4" fill="rgba(37,99,235,.55)" stroke="rgba(96,165,250,.6)" stroke-width="1"/>
+          <text x="125" y="135" text-anchor="middle" fill="white" font-size="9" font-family="sans-serif">Tower 3</text>
+          <!-- Tower 4 -->
+          <rect x="55" y="140" width="70" height="80" rx="4" fill="rgba(37,99,235,.4)" stroke="rgba(96,165,250,.5)" stroke-width="1"/>
+          <text x="90" y="184" text-anchor="middle" fill="white" font-size="9" font-family="sans-serif">Tower 4</text>
+          <!-- Pool area -->
+          <ellipse cx="195" cy="155" rx="30" ry="18" fill="rgba(96,165,250,.25)" stroke="rgba(96,165,250,.5)" stroke-width="1"/>
+          <text x="195" y="159" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="7" font-family="sans-serif">50m Pool</text>
+          <!-- Amenity dots -->
+          <circle cx="170" cy="105" r="5" fill="rgba(251,191,36,.6)"/>
+          <circle cx="220" cy="120" r="4" fill="rgba(34,197,94,.6)"/>
+          <circle cx="230" cy="165" r="4" fill="rgba(34,197,94,.6)"/>
+          <circle cx="175" cy="195" r="4" fill="rgba(251,191,36,.6)"/>
+          <circle cx="215" cy="195" r="3" fill="rgba(96,165,250,.6)"/>
+          <!-- Entry/Exit -->
+          <rect x="155" y="240" width="30" height="8" rx="2" fill="rgba(34,197,94,.5)"/>
+          <text x="170" y="247" text-anchor="middle" fill="rgba(255,255,255,.7)" font-size="6" font-family="sans-serif">ENTRY</text>
+          <!-- Labels -->
+          <text x="260" y="60" fill="rgba(255,255,255,.35)" font-size="7" font-family="sans-serif">Future</text>
+          <text x="260" y="70" fill="rgba(255,255,255,.35)" font-size="7" font-family="sans-serif">Expansion</text>
+          <rect x="245" y="75" width="75" height="60" rx="3" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.1)" stroke-width="0.5" stroke-dasharray="3,2"/>
+        </svg>
+      </div>
+      <div class="plan-info">
+        <h3>Landscape Legends</h3>
+        <p>A thoughtfully curated landscape across 4.96 acres, with every square metre designed for wellness, recreation, and community living.</p>
+        <div class="plan-legend">
+          <div class="pl-item"><div class="pl-dot" style="background:rgba(37,99,235,.7)"></div>Towers 3 &amp; 4 — G+42 Floors</div>
+          <div class="pl-item"><div class="pl-dot" style="background:rgba(96,165,250,.7)"></div>50m Lap &amp; 25m Leisure Pool</div>
+          <div class="pl-item"><div class="pl-dot" style="background:rgba(34,197,94,.6)"></div>430m Nature Trail</div>
+          <div class="pl-item"><div class="pl-dot" style="background:rgba(251,191,36,.6)"></div>Party Plaza / Alfresco Decks</div>
+          <div class="pl-item"><div class="pl-dot" style="background:rgba(96,165,250,.5)"></div>Kids' Pool &amp; Play Park</div>
+        </div>
+        <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px">
+          <div style="background:rgba(37,99,235,.15);border:1px solid rgba(37,99,235,.3);border-radius:10px;padding:14px 16px">
+            <div style="font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.7px;margin-bottom:4px">Site Area (Total)</div>
+            <div style="font-family:var(--serif);font-size:20px;color:#fff;font-weight:600;">11.99 Acres</div>
+          </div>
+          <div style="background:rgba(37,99,235,.15);border:1px solid rgba(37,99,235,.3);border-radius:10px;padding:14px 16px">
+            <div style="font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.7px;margin-bottom:4px">Phase 1 Land Area</div>
+            <div style="font-family:var(--serif);font-size:20px;color:#fff;font-weight:600;">4.96 Acres</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── DEVELOPER ── -->
+<section class="section bg-navy">
+  <div class="section-in">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="section-eyebrow" style="color:var(--sky)">About the Developer</div>
+      <div class="section-title" style="color:#fff">The SOBHA <em>Legacy</em></div>
+      <p class="section-sub" style="color:rgba(255,255,255,.5);margin:0 auto">Anchored in international design ethos, SOBHA has forayed into Indian real estate frontiers with an unwavering resolution to redefine luxury. Perfection is not a dream — it is SOBHA's standard.</p>
+    </div>
+    <div class="dev-wrap">
+      <div class="dev-stats">
+        <div class="dev-stat"><div class="ds-val">1995</div><div class="ds-lbl">Established</div></div>
+        <div class="dev-stat"><div class="ds-val">27 Cities</div><div class="ds-lbl">14 States</div></div>
+        <div class="dev-stat"><div class="ds-val">581</div><div class="ds-lbl">Iconic Projects</div></div>
+        <div class="dev-stat"><div class="ds-val">150M+</div><div class="ds-lbl">Sq Ft Delivered</div></div>
+        <div class="dev-stat"><div class="ds-val">265+</div><div class="ds-lbl">Prestigious Awards</div></div>
+        <div class="dev-stat"><div class="ds-val">15,650+</div><div class="ds-lbl">Strong Workforce</div></div>
+        <div class="dev-stat"><div class="ds-val">1,456</div><div class="ds-lbl">Quality Checks</div></div>
+        <div class="dev-stat"><div class="ds-val">Harvard</div><div class="ds-lbl">Case Study</div></div>
+      </div>
+      <div class="dev-text">
+        <h3>Perfection, Inevitably Yours</h3>
+        <p>SOBHA introduced Backward Integration to Indian real estate — a first-of-its-kind philosophy where every discipline, from engineering to interiors, is mastered in-house. This ensures on-time delivery, cost efficiency, uniform quality and complete control over execution.</p>
+        <p>From concrete casting to interior artistry, each detail reflects a commitment to uncompromising quality. SOBHA undertakes 1,456 rigorous checks before every handover.</p>
+        <div class="dev-award">
+          <div style="font-size:22px">🏆</div>
+          <div class="dev-award-text">SOBHA's Backward Integration model has been featured as a Harvard Business School case study — a testament to its industry-defining approach.</div>
+        </div>
+        <div class="dev-award" style="margin-top:10px;background:rgba(96,165,250,.1);border-color:rgba(96,165,250,.2)">
+          <div style="font-size:22px">🏙️</div>
+          <div class="dev-award-text">Architecting the NCR Skyline since 2011 — spanning 3.90 million sq ft across Gurugram, Greater Noida &amp; more.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA / FORM ── -->
+<section class="cta-section" id="enquire">
+  <div class="cta-in">
+    <div class="cta-text">
+      <h2>Don't Miss Inaugural Pricing on Sobha Crescent</h2>
+      <p>EOI of ₹10 Lakhs secures your unit at the best possible price. Our Kedar Estate expert will walk you through floor plans, payment options, and arrange a site visit.</p>
+      <div class="cta-points">
+        <div class="cta-pt">HARERA Approved — RC/REP/HARERA/GGM/1054/786/2026/26</div>
+        <div class="cta-pt">Zero brokerage on this new launch</div>
+        <div class="cta-pt">Home loan assistance — 12+ bank tie-ups</div>
+        <div class="cta-pt">Dedicated relationship manager assigned</div>
+        <div class="cta-pt">Site visit arranged at your convenience</div>
+      </div>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+        <a href="tel:+918595221631" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:500">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+          +91-8595221631
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=918595221631&text=Hi%2C%20I%27m%20interested%20in%20Sobha%20Crescent%2C%20Sector%2063A.%20Please%20share%20details." target="_blank" style="display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:500;border:none">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+    <div class="cta-form">
+      <div id="ctaFormFields">
+        <h3>Book a Site Visit</h3>
+        <p class="cta-form-sub">Get floor plans, price sheet &amp; callback within 2 hrs</p>
+        <div class="fg-row">
+          <div class="fg"><label>Full Name *</label><input type="text" id="cf_name" placeholder="Your name"></div>
+          <div class="fg"><label>Phone *</label><input type="tel" id="cf_phone" placeholder="+91 98765 43210"></div>
+        </div>
+        <div class="fg"><label>Email</label><input type="email" id="cf_email" placeholder="your@email.com"></div>
+        <div class="fg"><label>Configuration</label>
+          <select id="cf_config">
+            <option>3 Bed Residence Grande</option>
+            <option>4 Bed Residence Grande</option>
+            <option>4 Bed Grande + DH</option>
+            <option>Advise me</option>
+          </select>
+        </div>
+        <div class="fg-row">
+          <div class="fg"><label>Budget</label>
+            <select><option>₹2–4 Cr</option><option>₹4–7 Cr</option><option>₹7 Cr+</option></select>
+          </div>
+          <div class="fg"><label>When to Call</label>
+            <select><option>Morning 9–12</option><option>Afternoon 12–5</option><option>Evening 5–8</option><option>Anytime</option></select>
+          </div>
+        </div>
+        <button class="form-submit" onclick="submitCtaForm()">Book Site Visit &amp; Get Pricing →</button>
+        <p class="form-note">Free consultation · Zero brokerage · No pressure</p>
+      </div>
+      <div id="ctaFormSuccess" class="form-success">
+        <div class="form-success-icon">✓</div>
+        <h4>Request Received!</h4>
+        <p>Our expert will call you at <strong id="ctaSuccPhone"></strong> within 2 hours.<br>Thank you for choosing Kedar Estate and Investments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-in">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="data:image/png;base64,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" alt="Kedar Estate and Investments"></div>
+        <p class="footer-tag">RERA-registered channel partner in Gurugram. 8th Floor, Magnum Towers, Sector 58, Gurugram.</p>
+        <div class="footer-contact" style="margin-top:14px">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+          <a href="tel:+918595221631">+91-8595221631</a>
+        </div>
+        <div class="footer-contact">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:newbookings21@gmail.com">newbookings21@gmail.com</a>
+        </div>
+        <p class="footer-rera">RERA: RC/HARERA/GGM/1787/1382/2022/155<br>Sobha Crescent RERA: RC/REP/HARERA/GGM/1054/786/2026/26</p>
+      </div>
+      <div class="footer-col">
+        <h4>Sobha Crescent</h4>
+        <a onclick="document.querySelector('.cta-section').scrollIntoView({behavior:'smooth'})">Book EOI</a>
+        <a onclick="document.getElementById('enquire').scrollIntoView({behavior:'smooth'})">Get Floor Plans</a>
+        <a onclick="document.getElementById('enquire').scrollIntoView({behavior:'smooth'})">Site Visit</a>
+        <a onclick="document.getElementById('enquire').scrollIntoView({behavior:'smooth'})">Price Sheet</a>
+      </div>
+      <div class="footer-col">
+        <h4>Other Projects</h4>
+        <a href="index.html#projects">New Launches</a>
+        <a href="index.html#projects">Resale Properties</a>
+        <a href="index.html#localities">Golf Course Ext.</a>
+        <a href="index.html#localities">Dwarka Expressway</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <p class="footer-copy">© 2026 Kedar Estate and Investments · All rights reserved</p>
+        <p class="footer-copy">Authorized channel partner for Sobha Crescent, Sector 63A, Gurugram</p>
+      </div>
+      <p class="footer-disc">Prices are indicative. Images are representational. All artist impressions are indicative of the actual designs. Subject to change without notice. Please verify all details with the developer before purchase. We do not represent the developer directly.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ── MODAL ── -->
+<div class="mo" id="mo" onclick="closeModalOutside(event)">
+  <div class="modal" id="mbox">
+    <button class="mc" onclick="closeModal()">×</button>
+    <div id="mform">
+      <h3>Book Your EOI — Sobha Crescent</h3>
+      <p class="modal-sub">Secure your unit at inaugural pricing. Our expert calls within 2 hours.</p>
+      <div class="fg"><label>Full Name *</label><input type="text" id="mName" placeholder="Your name"></div>
+      <div class="fg"><label>Phone Number *</label><input type="tel" id="mPhone" placeholder="+91 98765 43210"></div>
+      <div class="fg"><label>Configuration</label>
+        <select><option>3 Bed Grande</option><option>4 Bed Grande</option><option>4 Bed Grande+DH</option><option>Advise me</option></select>
+      </div>
+      <div class="fg"><label>Budget</label>
+        <select><option>₹2–4 Cr</option><option>₹4–7 Cr</option><option>₹7 Cr+</option></select>
+      </div>
+      <button class="form-submit" onclick="submitModal()">Request Callback &amp; Floor Plans →</button>
+    </div>
+    <div class="succ" id="msucc">
+      <div class="succ-icon">✓</div>
+      <h4>EOI Request Received!</h4>
+      <p>Our expert will call you at <strong id="mSuccPhone"></strong> within 2 hours.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── WA FLOAT ── -->
+<div class="wa-float">
+  <span class="wa-tooltip">Chat on WhatsApp</span>
+  <div class="wa-wrap">
+    <span class="wa-pulse"></span>
+    <a class="wa-btn" href="https://api.whatsapp.com/send?phone=918595221631&text=Hi%2C%20I%27m%20interested%20in%20Sobha%20Crescent%2C%20Sector%2063A.%20Please%20share%20details." target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+</div>
+
+<script>
+const AMENITIES = [
+  {id:'rec',icon:'🛖',name:'Alfresco Decks'},
+  {id:'rec',icon:'🚢',name:'Floating Decks'},
+  {id:'rec',icon:'⛵',name:'The Jetty'},
+  {id:'rec',icon:'🏡',name:'Gazebo Cove'},
+  {id:'rec',icon:'🔥',name:'Party Plaza & BBQ Deck'},
+  {id:'rec',icon:'☀️',name:'Sun Deck'},
+  {id:'rec',icon:'🐟',name:'Bio Pond'},
+  {id:'park',icon:'🐾',name:"Pet Park"},
+  {id:'park',icon:'🏛️',name:'Central Plaza'},
+  {id:'park',icon:'🌿',name:'430m Nature Trail'},
+  {id:'park',icon:'🎪',name:'Festive Lawn'},
+  {id:'park',icon:'🌳',name:'Canopy Grove'},
+  {id:'active',icon:'🏊',name:'50m Lap Pool'},
+  {id:'active',icon:'🏖️',name:'25m Leisure Pool'},
+  {id:'active',icon:'🏋️',name:'Outdoor Fitness Deck'},
+  {id:'active',icon:'🦶',name:'Reflexology Walk'},
+  {id:'active',icon:'🧘',name:'Yoga & Meditation Lawn'},
+  {id:'active',icon:'⛸️',name:'65m Skating Rink'},
+  {id:'kids',icon:'🏊',name:"Kids' Pool"},
+  {id:'kids',icon:'🎠',name:'Play Park'},
+];
+
+function filterAmenity(tag, btn) {
+  document.querySelectorAll('.atab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const list = tag === 'all' ? AMENITIES : AMENITIES.filter(a => a.id === tag);
+  document.getElementById('amenityGrid').innerHTML = list.map(a =>
+    `<div class="amenity-card"><div class="amenity-icon">${a.icon}</div><div class="amenity-name">${a.name}</div></div>`
+  ).join('');
+}
+filterAmenity('all', document.querySelector('.atab'));
+
+function openModal() {
+  document.getElementById('mo').classList.add('open');
+  document.getElementById('mform').style.display = '';
+  document.getElementById('msucc').style.display = 'none';
+}
+function closeModal() { document.getElementById('mo').classList.remove('open'); }
+function closeModalOutside(e) { if (e.target === document.getElementById('mo')) closeModal(); }
+
+function submitModal() {
+  const n = document.getElementById('mName').value.trim();
+  const p = document.getElementById('mPhone').value.trim();
+  if (!n || !p) { alert('Please enter your name and phone number.'); return; }
+  document.getElementById('mSuccPhone').textContent = p;
+  document.getElementById('mform').style.display = 'none';
+  document.getElementById('msucc').style.display = 'block';
+  setTimeout(closeModal, 3600);
+}
+
+function submitCtaForm() {
+  const n = document.getElementById('cf_name').value.trim();
+  const p = document.getElementById('cf_phone').value.trim();
+  if (!n || !p) { alert('Please enter your name and phone number.'); return; }
+  document.getElementById('ctaSuccPhone').textContent = p;
+  document.getElementById('ctaFormFields').style.display = 'none';
+  document.getElementById('ctaFormSuccess').style.display = 'block';
+}
+</script>
+</body></html>
