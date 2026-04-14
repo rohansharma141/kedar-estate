@@ -312,19 +312,88 @@ img{display:block;max-width:100%;}a{text-decoration:none;color:inherit;}button{c
 .wa-btn svg{width:30px;height:30px;fill:#fff;flex-shrink:0;}
 @keyframes wapulse{0%{transform:scale(1);opacity:.55}70%{transform:scale(1.6);opacity:0}100%{transform:scale(1.6);opacity:0}}
 
+
+/* ── MOBILE NAV FIX ── */
+.nav-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: var(--navy);
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+@media (max-width: 850px) {
+  /* Prevent logo distortion */
+  .nav-logo img {
+    flex-shrink: 0;
+    max-width: 150px; 
+    height: auto;
+  }
+  
+  /* Hide desktop items */
+  .nav-phone, .nav-cta {
+    display: none !important;
+  }
+  
+  /* Convert desktop links to mobile dropdown */
+  .nav-links {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 66px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    align-items: flex-start;
+  }
+  
+  .nav-links.open {
+    display: flex !important;
+  }
+
+  /* Force all links to show inside the open menu */
+  .nav-links.open a {
+    display: flex !important; 
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid #f3f4f6; 
+    font-size: 16px;
+  }
+  
+  .nav-links.open a:last-child {
+    border-bottom: none;
+  }
+
+  /* Show hamburger button */
+  .nav-menu-btn {
+    display: block;
+  }
+}
+
 </style>
 </head>
-<body><nav class="nav">
+<body>
+
+
+<nav class="nav">
   <div class="nav-in">
-    <a href="index.html" class="nav-logo"><img src="data:image/png;base64,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" alt="Kedar Estate and Investments" style="height:44px;width:auto;display:block;"></a>
-    <div class="nav-links">
+    <a href="index.html" class="nav-logo">
+      <img src="data:image/png;base64,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" alt="Kedar Estate and Investments" style="height:44px;width:auto;display:block;">
+    </a>
+    
+    <div class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
-      <a href="index.html#localities">Localities</a>
-      <a href="index.html#builders">Builders</a>
-      <a href="index.html#about">About Us</a>
+      <a href="index.html#locality">Localities</a>
+      <a href="index.html#builder">Builders</a>
+      <a href="index.html#about-us">About Us</a>
       <a href="contact.html" style="color:var(--blue)">Contact Us</a>
       <a href="sobha-crescent.html" class="nav-sobha"><span class="nav-sobha-badge">NEW</span>Sobha Crescent</a>
     </div>
+    
     <div style="display:flex;align-items:center;gap:12px">
       <a href="tel:+918595221631" class="nav-phone">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
@@ -332,8 +401,12 @@ img{display:block;max-width:100%;}a{text-decoration:none;color:inherit;}button{c
       </a>
       <button class="nav-cta" onclick="openModal()">Book Consultation</button>
     </div>
+    
+    <button class="nav-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
   </div>
 </nav>
+
+
 <section class="cp-hero">
   <div class="hero-grid" style="position:absolute;inset:0"></div>
   <div class="cp-hero-in">
@@ -372,45 +445,72 @@ img{display:block;max-width:100%;}a{text-decoration:none;color:inherit;}button{c
     </div>
   </div>
 
-  <div class="cp-form-card">
-    <h2>Book a Free Consultation</h2>
-    <p class="sub">Our Gurugram expert will call you within 2 hours.</p>
-    <div id="cpForm">
-      <div class="fg-row">
-        <div class="fg-full"><label>Full Name *</label><input type="text" id="cpName" placeholder="Your full name"></div>
-        <div class="fg-full"><label>Phone Number *</label><input type="tel" id="cpPhone" placeholder="+91 98765 43210"></div>
-      </div>
-      <div class="fg-full"><label>Email Address</label><input type="email" id="cpEmail" placeholder="your@email.com"></div>
-      <div class="fg-full"><label>Interested In</label>
-        <select id="cpInterest">
-          <option>Sobha Crescent – New Launch</option>
-          <option>Other New Launch</option>
-          <option>Resale Property</option>
-          <option>Investment Advice</option>
-          <option>Site Visit Booking</option>
-          <option>Home Loan Assistance</option>
-          <option>General Enquiry</option>
-        </select>
-      </div>
-      <div class="fg-row">
-        <div class="fg-full"><label>Budget</label>
-          <select><option>Under ₹1 Cr</option><option>₹1–2 Cr</option><option>₹2–4 Cr</option><option>₹4–7 Cr</option><option>₹7 Cr+</option></select>
+  <div class="mo2" id="mo2" onclick="closeModalOutside(event)">
+  <div class="modal" id="mbox2">
+    <form id="mform2" action="https://formspree.io/f/mlgadedp" method="POST">
+      <div class="cp-form-card">
+        <h2>Book a Free Consultation</h2>
+        <p class="sub">Our Gurugram expert will call you within 2 hours.</p>
+        
+        <div id="cpFormWrap">
+          <div class="fg-row">
+            <div class="fg-full">
+              <label>Full Name *</label>
+              <input type="text" id="cpName" name="full_name" placeholder="Your full name" required>
+            </div>
+            <div class="fg-full">
+              <label>Phone Number *</label>
+              <input type="tel" id="cpPhone" name="phone" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+          <div class="fg-full">
+            <label>Email Address</label>
+            <input type="email" id="cpEmail" name="email" placeholder="your@email.com">
+          </div>
+          <div class="fg-full">
+            <label>Interested In</label>
+            <select id="cpInterest" name="interested_in">
+              <option value="Sobha Crescent">Sobha Crescent – New Launch</option>
+              <option value="Other New Launch">Other New Launch</option>
+              <option value="Resale Property">Resale Property</option>
+              <option value="Investment Advice">Investment Advice</option>
+              <option value="Site Visit Booking">Site Visit Booking</option>
+              <option value="General Enquiry">General Enquiry</option>
+            </select>
+          </div>
+          <div class="fg-row">
+            <div class="fg-full">
+              <label>Budget</label>
+              <select name="budget">
+                <option value="Under 1 Cr">Under ₹1 Cr</option>
+                <option value="1-2 Cr">₹1–2 Cr</option>
+                <option value="2-4 Cr">₹2–4 Cr</option>
+                <option value="4-7 Cr">₹4–7 Cr</option>
+                <option value="7 Cr+">₹7 Cr+</option>
+              </select>
+            </div>
+            <div class="fg-full">
+              <label>When to Call</label>
+              <select name="when_to_call">
+                <option value="Morning (9-12)">Morning (9–12)</option>
+                <option value="Afternoon (12-4)">Afternoon (12–4)</option>
+                <option value="Evening (4-8)">Evening (4–8)</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" id="fsub-btn2" class="fsub" style="margin-top: 15px;">Request Consultation →</button>
         </div>
-        <div class="fg-full"><label>When to Call</label>
-          <select><option>Morning (9–12)</option><option>Afternoon (12–5)</option><option>Evening (5–8)</option><option>Anytime</option></select>
+
+        <div id="msucc2" style="display:none" class="succ">
+          <div class="succ-icon">✓</div>
+          <h4>Request Received!</h4>
+          <p>Our expert will call you at <strong id="mSuccPhone2"></strong> within 2 hours.<br>Thank you for choosing Kedar Estate and Investments.</p>
         </div>
       </div>
-      <div class="fg-full"><label>Message (optional)</label>
-        <textarea rows="3" placeholder="Tell us more about what you're looking for…" style="resize:vertical"></textarea>
-      </div>
-      <button class="cp-submit" onclick="submitContact()">Send Request →</button>
-    </div>
-    <div id="cpSucc" style="display:none;text-align:center;padding:32px 0">
-      <div style="font-size:52px;margin-bottom:14px">✓</div>
-      <h3 style="font-family:'DM Serif Display',Georgia,serif;font-size:22px;color:var(--navy);margin-bottom:8px">Request Received!</h3>
-      <p style="font-size:14px;color:var(--ts)">Our expert will call you at <strong id="cpSuccPhone"></strong> within 2 hours.<br>Thank you for choosing Kedar Estate and Investments.</p>
-    </div>
+    </form>
   </div>
+</div>
+  
 </div>
 <footer class="footer">
   <div class="footer-in">
@@ -462,48 +562,192 @@ img{display:block;max-width:100%;}a{text-decoration:none;color:inherit;}button{c
 <div class="mo" id="mo" onclick="closeModalOutside(event)">
   <div class="modal" id="mbox">
     <button class="mc" onclick="closeModal()">×</button>
-    <div id="mform">
+    
+    <form id="mform" action="https://formspree.io/f/mlgadedp" method="POST">
       <h3>Book a Free Consultation</h3>
       <p class="modal-sub">Our Gurugram expert will call you within 2 hours. No pressure, no obligation.</p>
-      <div class="fg"><label>Full Name *</label><input type="text" id="mName" placeholder="Your full name"></div>
-      <div class="fg"><label>Phone Number *</label><input type="tel" id="mPhone" placeholder="+91 98765 43210"></div>
-      <div class="fg"><label>Email Address</label><input type="email" id="mEmail" placeholder="your@email.com"></div>
-      <div class="fg"><label>Interested In</label>
-        <select id="mInterest">
-          <option>Sobha Crescent – New Launch</option><option>Other New Launch</option>
-          <option>Resale Property</option><option>Investment Advice</option><option>Site Visit Booking</option>
+      
+      <div class="fg">
+        <label>Full Name *</label>
+        <input type="text" id="mName" name="full_name" placeholder="Your full name" required>
+      </div>
+      
+      <div class="fg">
+        <label>Phone Number *</label>
+        <input type="tel" id="mPhone" name="phone" placeholder="+91 98765 43210" required>
+      </div>
+      
+      <div class="fg">
+        <label>Email Address</label>
+        <input type="email" id="mEmail" name="email" placeholder="your@email.com">
+      </div>
+      
+      <div class="fg">
+        <label>Interested In</label>
+        <select id="mInterest" name="interested_in">
+          <option value="Sobha Crescent">Sobha Crescent – New Launch</option>
+          <option value="Other New Launch">Other New Launch</option>
+          <option value="Resale Property">Resale Property</option>
+          <option value="Investment Advice">Investment Advice</option>
+          <option value="Site Visit Booking">Site Visit Booking</option>
         </select>
       </div>
-      <div class="fg"><label>Budget</label>
-        <select><option>Under ₹1 Cr</option><option>₹1–2 Cr</option><option>₹2–4 Cr</option><option>₹4–7 Cr</option><option>₹7 Cr+</option></select>
+      
+      <div class="fg">
+        <label>Budget</label>
+        <select name="budget">
+          <option value="Under 1 Cr">Under ₹1 Cr</option>
+          <option value="1-2 Cr">₹1–2 Cr</option>
+          <option value="2-4 Cr">₹2–4 Cr</option>
+          <option value="4-7 Cr">₹4–7 Cr</option>
+          <option value="7 Cr+">₹7 Cr+</option>
+        </select>
       </div>
-      <button class="fsub" onclick="submitForm()">Request Callback →</button>
-    </div>
+      
+      <button type="submit" id="fsub-btn" class="fsub">Request Callback →</button>
+    </form>
+
     <div id="msucc" style="display:none" class="succ">
       <div class="succ-icon">✓</div>
       <h4>Request Received!</h4>
-      <p>Our expert will call you at <strong id="succPhone"></strong> within 2 hours.<br>Thank you for choosing Kedar Estate and Investments.</p>
+      <p>Our expert will call you at <strong id="mSuccPhone"></strong> within 2 hours.<br>Thank you for choosing Kedar Estate and Investments.</p>
     </div>
   </div>
-</div><script>
+</div>
+
+<script>
 function openModal(interest){
-  if(interest){var s=document.getElementById('mInterest');if(s)s.value=interest;}
+  var formEl = document.getElementById('mform');
+  
+  // Reset the form completely every time the modal opens
+  if(formEl) formEl.reset(); 
+  
+  if(interest){
+    var s = document.getElementById('mInterest');
+    if(s) s.value = interest;
+  }
+  
+  // Show the form, hide the success message
   document.getElementById('mo').classList.add('open');
-  document.getElementById('mform').style.display='';
-  document.getElementById('msucc').style.display='none';
+  formEl.style.display = '';
+  document.getElementById('msucc').style.display = 'none';
 }
-function closeModal(){document.getElementById('mo').classList.remove('open');}
-function closeModalOutside(e){if(e.target===document.getElementById('mo'))closeModal();}
-function submitForm(){
-  var n=document.getElementById('mName').value.trim();
-  var p=document.getElementById('mPhone').value.trim();
-  if(!n||!p){alert('Please enter your name and phone number.');return;}
-  document.getElementById('succPhone').textContent=p;
-  document.getElementById('mform').style.display='none';
-  document.getElementById('msucc').style.display='block';
-  setTimeout(closeModal,3600);
+
+function closeModal(){
+  document.getElementById('mo').classList.remove('open');
 }
+
+function closeModalOutside(e){
+  if(e.target === document.getElementById('mo')) closeModal();
+}
+
+// Formspree Intercept and Submit
+const mform = document.getElementById('mform');
+const fsubBtn = document.getElementById('fsub-btn');
+
+if(mform) {
+  mform.addEventListener('submit', async function(e) {
+    e.preventDefault(); // Prevents redirecting to Formspree page
+
+    var p = document.getElementById('mPhone').value.trim();
+
+    // Update button to show loading state
+    const originalText = fsubBtn.innerHTML;
+    fsubBtn.disabled = true;
+    fsubBtn.innerHTML = 'Sending...';
+
+    const formData = new FormData(mform);
+
+    try {
+      const response = await fetch(mform.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        // Hide the form fields
+        mform.style.display = 'none';
+        
+        // Update the success message with the user's phone number
+        document.getElementById('mSuccPhone').innerText = p;
+        
+        // Show the success screen and keep it open
+        document.getElementById('msucc').style.display = 'block';
+
+      } else {
+        alert("Oops! There was a problem submitting your form.");
+      }
+    } catch (error) {
+      alert("Network error. Please try again.");
+    } finally {
+      // Reset button state in the background
+      fsubBtn.disabled = false;
+      fsubBtn.innerHTML = originalText;
+    }
+  });
+}
+
+// Auto-close mobile menu when a link is clicked
+document.querySelectorAll('#navLinks a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
 </script>
+
+
+<script>
+
+// Formspree Intercept and Submit for the SECOND form (mform2)
+const mform2 = document.getElementById('mform2');
+const fsubBtn2 = document.getElementById('fsub-btn2');
+
+if(mform2) {
+  mform2.addEventListener('submit', async function(e) {
+    e.preventDefault(); 
+
+    var p2 = document.getElementById('cpPhone').value.trim();
+
+    // Show loading state
+    const originalText2 = fsubBtn2.innerHTML;
+    fsubBtn2.disabled = true;
+    fsubBtn2.innerHTML = 'Sending...';
+
+    const formData2 = new FormData(mform2);
+
+    try {
+      const response2 = await fetch(mform2.action, {
+        method: 'POST',
+        body: formData2,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response2.ok) {
+        // Hide the form fields (using the wrapper we added)
+        document.getElementById('cpFormWrap').style.display = 'none';
+        
+        // Update success message phone number
+        document.getElementById('mSuccPhone2').innerText = p2;
+        
+        // Show success screen
+        document.getElementById('msucc2').style.display = 'block';
+
+      } else {
+        alert("Oops! There was a problem submitting your form.");
+      }
+    } catch (error) {
+      alert("Network error. Please try again.");
+    } finally {
+      // Re-enable button
+      fsubBtn2.disabled = false;
+      fsubBtn2.innerHTML = originalText2;
+    }
+  });
+}
+
+</script>
+
 <script>
 function submitContact(){
   var n=document.getElementById('cpName').value.trim();
