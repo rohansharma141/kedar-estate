@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kedar Estate & Investments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --obsidian: #0d0d0f;
+    --obsidian-mid: #161619;
+    --obsidian-surface: #1e1e22;
+    --obsidian-card: #242428;
+    --champagne: #c9a96e;
+    --champagne-light: #e0c491;
+    --champagne-pale: #f5ead4;
+    --ivory: #faf6ef;
+    --ivory-dim: #e8e0d0;
+    --slate: #6b6b75;
+    --slate-light: #9898a3;
+    --white: #ffffff;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --ease-luxury: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--obsidian);
+    color: var(--ivory);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: var(--obsidian); }
+  ::-webkit-scrollbar-thumb { background: var(--champagne); border-radius: 2px; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 60px;
+    transition: all 0.5s var(--ease-luxury);
+  }
+
+  nav.scrolled {
+    background: rgba(13,13,15,0.94);
+    backdrop-filter: blur(20px);
+    padding: 18px 60px;
+    border-bottom: 1px solid rgba(201,169,110,0.12);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--ivory);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--champagne); }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ivory-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--champagne); }
+
+  .nav-cta {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--obsidian);
+    background: var(--champagne);
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--champagne-light); transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, rgba(13,13,15,0.3) 0%, rgba(13,13,15,0.1) 40%, rgba(13,13,15,0.85) 100%),
+      url('images/Gurgaon night view.png') center/cover no-repeat;
+    transform: scale(1.05);
+    animation: heroZoom 12s var(--ease-luxury) forwards;
+  }
+
+  @keyframes heroZoom {
+    from { transform: scale(1.05); }
+    to { transform: scale(1.0); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 60px 100px;
+    max-width: 780px;
+    animation: heroFadeUp 1.2s var(--ease-luxury) 0.3s both;
+  }
+
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .hero-eyebrow-line {
+    width: 40px;
+    height: 1px;
+    background: var(--champagne);
+  }
+
+  .hero-eyebrow-text {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    font-weight: 400;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 7vw, 88px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--ivory);
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--champagne-light);
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    //color: var(--ivory-dim);
+    color: var(--white);
+    max-width: 420px;
+    margin-bottom: 48px;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--obsidian);
+    background: var(--champagne);
+    padding: 18px 44px;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: all 0.3s var(--ease-luxury);
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover { background: var(--champagne-light); transform: translateY(-2px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ivory-dim);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 300;
+    transition: color 0.3s;
+  }
+
+  .btn-ghost::after {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s var(--ease-luxury);
+  }
+
+  .btn-ghost:hover { color: var(--champagne); }
+  .btn-ghost:hover::after { width: 44px; }
+
+  /* Hero stats strip */
+  .hero-stats {
+    position: absolute;
+    bottom: 0; right: 0;
+    z-index: 2;
+    display: flex;
+    background: rgba(13,13,15,0.88);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(201,169,110,0.15);
+    border-left: 1px solid rgba(201,169,110,0.15);
+    animation: heroFadeUp 1.2s var(--ease-luxury) 0.7s both;
+  }
+
+  .hero-stat {
+    padding: 32px 44px;
+    border-right: 1px solid rgba(201,169,110,0.1);
+    text-align: center;
+  }
+
+  .hero-stat:last-child { border-right: none; }
+
+  .hero-stat-num {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--champagne);
+    display: block;
+    line-height: 1;
+  }
+
+  .hero-stat-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--slate-light);
+    display: block;
+    margin-top: 8px;
+    font-weight: 400;
+  }
+
+  /* ─── SECTION UTILITIES ─── */
+  section { padding: 120px 60px; }
+
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .eyebrow-line {
+    width: 32px;
+    height: 1px;
+    background: var(--champagne);
+    flex-shrink: 0;
+  }
+
+  .eyebrow-text {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    font-weight: 400;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--ivory);
+    letter-spacing: -0.01em;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--champagne-light);
+  }
+
+  /* ─── INTRO SPLIT ─── */
+  .intro {
+    background: var(--obsidian);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .intro-text {
+    padding: 120px 80px 120px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .intro-body {
+    font-size: 16px;
+    color: var(--slate-light);
+    line-height: 1.9;
+    margin: 28px 0 40px;
+    max-width: 420px;
+    font-weight: 300;
+  }
+
+  .intro-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: rgba(201,169,110,0.12);
+    margin-top: 56px;
+    border: 1px solid rgba(201,169,110,0.12);
+  }
+
+  .intro-metric {
+    background: var(--obsidian);
+    padding: 28px 24px;
+  }
+
+  .intro-metric-num {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 300;
+    color: var(--champagne);
+    line-height: 1;
+  }
+
+  .intro-metric-desc {
+    font-size: 12px;
+    color: var(--slate-light);
+    margin-top: 8px;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+  }
+
+  .intro-visual {
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+  }
+
+  .intro-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s var(--ease-luxury);
+  }
+
+  .intro-visual:hover .intro-img { transform: scale(1.04); }
+
+  .intro-badge {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    background: rgba(13,13,15,0.88);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(201,169,110,0.25);
+    padding: 20px 28px;
+  }
+
+  .intro-badge-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--ivory);
+    font-weight: 300;
+  }
+
+  .intro-badge-sub {
+    font-size: 11px;
+    color: var(--champagne);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 4px;
+    font-weight: 400;
+  }
+
+  /* ─── PROPERTIES ─── */
+  .properties {
+    background: var(--obsidian-mid);
+    padding-bottom: 0;
+  }
+
+  .properties-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 56px;
+  }
+
+  .property-filters {
+    display: flex;
+    gap: 4px;
+  }
+
+  .filter-btn {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--slate-light);
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 400;
+    transition: all 0.25s;
+  }
+
+  .filter-btn.active,
+  .filter-btn:hover {
+    border-color: var(--champagne);
+    color: var(--champagne);
+    background: rgba(201,169,110,0.06);
+  }
+
+  .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(201,169,110,0.06);
+  }
+
+  .property-card {
+    background: var(--obsidian-card);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    group: true;
+  }
+
+  .property-card:first-child {
+    grid-column: span 2;
+  }
+
+  .property-img-wrap {
+    overflow: hidden;
+    position: relative;
+    height: 320px;
+  }
+
+  .property-card:first-child .property-img-wrap {
+    height: 420px;
+  }
+
+  .property-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease-luxury);
+    display: block;
+  }
+
+  .property-card:hover .property-img { transform: scale(1.06); }
+
+  .property-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13,13,15,0.92) 0%, transparent 60%);
+  }
+
+  .property-tag {
+    position: absolute;
+    top: 20px; left: 20px;
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--obsidian);
+    background: var(--champagne);
+    padding: 6px 14px;
+    font-weight: 500;
+  }
+
+  .property-info {
+    padding: 28px 32px;
+    border-top: 1px solid rgba(201,169,110,0.1);
+  }
+
+  .property-price {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--champagne-light);
+    margin-bottom: 6px;
+  }
+
+  .property-name {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--ivory);
+    margin-bottom: 4px;
+  }
+
+  .property-location {
+    font-size: 12px;
+    color: var(--slate-light);
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+  }
+
+  .property-specs {
+    display: flex;
+    gap: 24px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .property-spec {
+    font-size: 12px;
+    color: var(--slate-light);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 300;
+  }
+
+  .property-spec strong {
+    color: var(--ivory-dim);
+    font-weight: 400;
+  }
+
+  .view-all-strip {
+    padding: 48px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(201,169,110,0.08);
+  }
+
+  /* ─── FEATURES ─── */
+  .features {
+    background: var(--obsidian);
+    padding: 120px 60px;
+  }
+
+  .features-inner {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  .features-sticky {
+    position: sticky;
+    top: 120px;
+  }
+
+  .features-body {
+    font-size: 15px;
+    color: var(--slate-light);
+    line-height: 1.9;
+    margin: 24px 0 40px;
+    font-weight: 300;
+  }
+
+  .features-img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    margin-top: 40px;
+    display: block;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: rgba(201,169,110,0.08);
+  }
+
+  .feature-item {
+    background: var(--obsidian-surface);
+    padding: 40px 36px;
+    transition: background 0.3s;
+  }
+
+  .feature-item:hover { background: var(--obsidian-card); }
+
+  .feature-icon {
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(201,169,110,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: var(--champagne);
+    font-size: 18px;
+  }
+
+  .feature-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--ivory);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .feature-desc {
+    font-size: 13px;
+    color: var(--slate-light);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* ─── LOCATIONS ─── */
+  .locations {
+    background: var(--obsidian-mid);
+    padding: 120px 60px;
+  }
+
+  .locations-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 64px;
+  }
+
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: rgba(201,169,110,0.06);
+  }
+
+  .location-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+  }
+
+  .location-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease-luxury);
+    display: block;
+  }
+
+  .location-card:hover .location-img { transform: scale(1.08); }
+
+  .location-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13,13,15,0.9) 30%, transparent 70%);
+    transition: background 0.4s;
+  }
+
+  .location-card:hover .location-overlay {
+    background: linear-gradient(to top, rgba(13,13,15,0.95) 40%, rgba(13,13,15,0.2) 70%);
+  }
+
+  .location-info {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 28px 24px;
+    transform: translateY(0);
+    transition: transform 0.4s var(--ease-luxury);
+  }
+
+  .location-city {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ivory);
+    margin-bottom: 4px;
+  }
+
+  .location-count {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    font-weight: 400;
+  }
+
+  .location-arrow {
+    position: absolute;
+    top: 24px; right: 24px;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(201,169,110,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    color: var(--champagne);
+    font-size: 14px;
+  }
+
+  .location-card:hover .location-arrow { opacity: 1; transform: translate(4px, -4px); }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials {
+    background: var(--obsidian);
+    padding: 120px 60px;
+  }
+
+  .testimonials-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    background: rgba(201,169,110,0.06);
+    margin-top: 72px;
+  }
+
+  .testimonial-card {
+    background: var(--obsidian-surface);
+    padding: 48px 40px;
+    transition: background 0.3s;
+  }
+
+  .testimonial-card:hover { background: var(--obsidian-card); }
+
+  .testimonial-quote-mark {
+    font-family: var(--font-display);
+    font-size: 72px;
+    line-height: 0.6;
+    color: var(--champagne);
+    opacity: 0.4;
+    margin-bottom: 28px;
+    display: block;
+  }
+
+  .testimonial-text {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ivory-dim);
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+
+  .testimonial-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--champagne);
+    margin-bottom: 24px;
+  }
+
+  .testimonial-author {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ivory);
+    letter-spacing: 0.05em;
+  }
+
+  .testimonial-role {
+    font-size: 11px;
+    color: var(--champagne);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 4px;
+    font-weight: 400;
+  }
+
+  .testimonial-rating {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 28px;
+  }
+
+  .star {
+    width: 10px;
+    height: 10px;
+    background: var(--champagne);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  /* ─── CTA SECTION ─── */
+  .cta-section {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(13,13,15,0.82) 0%, rgba(13,13,15,0.6) 100%),
+      url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80') center/cover no-repeat;
+  }
+
+  .cta-inner {
+    position: relative;
+    z-index: 2;
+    padding: 140px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 62px);
+    font-weight: 300;
+    color: var(--ivory);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .cta-title em {
+    font-style: italic;
+    color: var(--champagne-light);
+  }
+
+  .cta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .form-input {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,169,110,0.18);
+    padding: 16px 20px;
+    font-size: 13px;
+    color: var(--ivory);
+    font-family: var(--font-body);
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 100%;
+  }
+
+  .form-input::placeholder { color: var(--slate); }
+  .form-input:focus { border-color: var(--champagne); }
+
+  select.form-input option { background: var(--obsidian); }
+
+  .form-submit {
+    background: var(--champagne);
+    color: var(--obsidian);
+    border: none;
+    padding: 18px 44px;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-family: var(--font-body);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+
+  .form-submit:hover { background: var(--champagne-light); transform: translateY(-2px); }
+
+  .cta-assurance {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    font-size: 11px;
+    color: var(--slate-light);
+    letter-spacing: 0.08em;
+  }
+
+  .cta-assurance-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--champagne);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ─── PROCESS ─── */
+  .process {
+    background: var(--obsidian-mid);
+    padding: 120px 60px;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: rgba(201,169,110,0.06);
+    margin-top: 72px;
+  }
+
+  .process-step {
+    background: var(--obsidian-card);
+    padding: 48px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .process-step:hover { background: var(--obsidian-surface); }
+
+  .process-num {
+    font-family: var(--font-display);
+    font-size: 80px;
+    font-weight: 300;
+    color: rgba(201,169,110,0.08);
+    position: absolute;
+    top: -10px; right: 20px;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .process-icon-ring {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(201,169,110,0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    color: var(--champagne);
+    font-size: 16px;
+  }
+
+  .process-step-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ivory);
+    margin-bottom: 14px;
+  }
+
+  .process-step-desc {
+    font-size: 13px;
+    color: var(--slate-light);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--obsidian);
+    border-top: 1px solid rgba(201,169,110,0.1);
+    padding: 80px 60px 40px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 64px;
+    padding-bottom: 64px;
+    border-bottom: 1px solid rgba(201,169,110,0.08);
+  }
+
+  .footer-brand-name {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--ivory);
+    margin-bottom: 16px;
+  }
+
+  .footer-brand-name span { color: var(--champagne); }
+
+  .footer-tagline {
+    font-size: 13px;
+    color: var(--slate-light);
+    line-height: 1.8;
+    margin-bottom: 32px;
+    font-weight: 300;
+    max-width: 280px;
+  }
+
+  .footer-contact-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: var(--slate-light);
+    align-items: flex-start;
+    font-weight: 300;
+  }
+
+  .footer-contact-label {
+    color: var(--champagne);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    min-width: 44px;
+    margin-top: 2px;
+    font-weight: 400;
+  }
+
+  .footer-col-title {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    font-weight: 400;
+    margin-bottom: 28px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: var(--slate-light);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.25s;
+    display: inline-block;
+  }
+
+  .footer-links a:hover { color: var(--champagne); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 36px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-legal {
+    font-size: 11px;
+    color: var(--slate);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 16px;
+  }
+
+  .social-link {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--slate-light);
+    font-size: 13px;
+    transition: all 0.25s;
+  }
+
+  .social-link:hover {
+    border-color: var(--champagne);
+    color: var(--champagne);
+  }
+
+  .rera-strip {
+    font-size: 10px;
+    color: var(--slate);
+    letter-spacing: 0.04em;
+    margin-top: 8px;
+  }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s var(--ease-luxury), transform 0.8s var(--ease-luxury);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    nav { padding: 20px 30px; }
+    nav.scrolled { padding: 16px 30px; }
+    .nav-links { display: none; }
+    section { padding: 80px 30px; }
+    .intro { grid-template-columns: 1fr; }
+    .intro-text { padding: 80px 30px; }
+    .intro-visual { min-height: 400px; }
+    .features-inner { grid-template-columns: 1fr; gap: 48px; }
+    .features-sticky { position: relative; top: 0; }
+    .features-img { display: none; }
+    .features-grid { grid-template-columns: 1fr; }
+    .properties-grid { grid-template-columns: 1fr; }
+    .property-card:first-child { grid-column: span 1; }
+    .locations-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-inner { grid-template-columns: 1fr; }
+    .cta-inner { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .hero-stats { display: none; }
+    .properties-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .locations-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+  }
+
+  @media (max-width: 640px) {
+    nav { padding: 18px 20px; }
+    .nav-cta { display: none; }
+    section { padding: 60px 20px; }
+    .intro-text { padding: 60px 20px; }
+    .intro-metrics { grid-template-columns: 1fr 1fr; }
+    .locations-grid { grid-template-columns: 1fr 1fr; }
+    .process-steps { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero-content { padding: 0 20px 80px; }
+    .cta-inner { padding: 80px 20px; }
+    .view-all-strip { padding: 40px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Kedar<span></span>Estate</a>
+  <ul class="nav-links">
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#locations">Locations</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#testimonials">Stories</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Schedule Viewing</a>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+    <!--  <span class="hero-eyebrow-text">Curated Luxury Real Estate</span> -->
+    </div>
+    <h1>Where Every <em>Home</em><br>Tells a Story</h1>
+    <p class="hero-sub">We don't just sell properties — we match discerning individuals with residences that reflect their life's ambitions. Gurgaon, Delhi, Noida & .</p>
+    <div class="hero-actions">
+      <a href="#properties" class="btn-primary">Explore Residences</a>
+      <a href="#why-us" class="btn-ghost">Our Approach</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num">2,400+</span>
+      <span class="hero-stat-label">Clients Served</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">500+</span>
+      <span class="hero-stat-label">Properties Listed</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">18 Yrs</span>
+      <span class="hero-stat-label">Market Expertise</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">₹ 4,200Cr</span>
+      <span class="hero-stat-label">Transactions Value</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INTRO SPLIT ─── -->
+<div class="intro" id="why-us">
+  <div class="intro-text">
+    <div class="section-eyebrow reveal">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Our Philosophy</span>
+    </div>
+    <h2 class="section-title reveal reveal-delay-1">Precision in Every<br><em>Transaction</em></h2>
+    <p class="intro-body reveal reveal-delay-2">At Kedar Estate & Investments, we believe a luxury home purchase should be as refined as the property itself. Our advisory-first approach means fewer listings, deeper due diligence, and a commitment to your long-term investment returns — not just the immediate sale.</p>
+    <a href="#contact" class="btn-ghost reveal reveal-delay-3">Begin your journey</a>
+    <div class="intro-metrics reveal reveal-delay-4">
+      <div class="intro-metric">
+        <div class="intro-metric-num">98%</div>
+        <div class="intro-metric-desc">Client Retention Rate</div>
+      </div>
+      <div class="intro-metric">
+        <div class="intro-metric-num">₹2Cr+</div>
+        <div class="intro-metric-desc">Average Portfolio Growth</div>
+      </div>
+      <div class="intro-metric">
+        <div class="intro-metric-num">72hr</div>
+        <div class="intro-metric-desc">Avg. Response Time</div>
+      </div>
+      <div class="intro-metric">
+        <div class="intro-metric-num">40+</div>
+        <div class="intro-metric-desc">Top Developer Partners</div>
+      </div>
+    </div>
+  </div>
+  <div class="intro-visual">
+    <img
+      class="intro-img"
+      src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&q=80"
+      alt="Luxury interior living space"
+      loading="lazy"
+    />
+    <div class="intro-badge">
+      <div class="intro-badge-title">Sobha Sanctuary, Gurugram</div>
+      <div class="intro-badge-sub">Featured Property · From ₹8.5 Cr</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── PROPERTIES ─── -->
+<section class="properties" id="properties">
+  <div class="properties-header">
+    <div>
+      <div class="section-eyebrow reveal">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Handpicked Listings</span>
+      </div>
+      <h2 class="section-title reveal reveal-delay-1">Signature<br><em>Residences</em></h2>
+    </div>
+    <div class="property-filters reveal">
+      <button class="filter-btn active" onclick="filterProps(this,'all')">All</button>
+      <button class="filter-btn" onclick="filterProps(this,'ready')">Ready to Move</button>
+      <button class="filter-btn" onclick="filterProps(this,'new')">New Launch</button>
+    </div>
+  </div>
+  <div class="properties-grid">
+    <!-- Featured card -->
+    <div class="property-card reveal" data-cat="ready">
+      <div class="property-img-wrap">
+        <img class="property-img" src="https://images.unsplash.com/photo-1600607687939-ce8a6d350d42?w=1000&q=80" alt="Whitefield Residences" loading="lazy" />
+        <div class="property-overlay"></div>
+        <div class="property-tag">Ready to Move · Featured</div>
+      </div>
+      <div class="property-info">
+        <div class="property-price">₹ 14.2 Cr onwards</div>
+        <div class="property-name">The Whitefield Towers</div>
+        <div class="property-location">Sector 54, Golf Course Road, Gurgaon</div>
+        <div class="property-specs">
+          <span class="property-spec"><strong>4 & 5</strong> BHK</span>
+          <span class="property-spec"><strong>5,200</strong> sq.ft</span>
+          <span class="property-spec"><strong>32nd</strong> Floor</span>
+          <span class="property-spec"><strong>Private</strong> Terrace</span>
+        </div>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="property-card reveal reveal-delay-1" data-cat="new">
+      <div class="property-img-wrap">
+        <img class="property-img" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=700&q=80" alt="Park View Villas" loading="lazy" />
+        <div class="property-overlay"></div>
+        <div class="property-tag">New Launch</div>
+      </div>
+      <div class="property-info">
+        <div class="property-price">₹ 9.8 Cr</div>
+        <div class="property-name">Verdana Park Villas</div>
+        <div class="property-location">Sector 79, Noida</div>
+        <div class="property-specs">
+          <span class="property-spec"><strong>3 & 4</strong> BHK</span>
+          <span class="property-spec"><strong>3,600</strong> sq.ft</span>
+          <span class="property-spec"><strong>Private</strong> Garden</span>
+        </div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="property-card reveal reveal-delay-2" data-cat="gurugram">
+      <div class="property-img-wrap">
+        <img class="property-img" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80" alt="Gurugram Sky Suites" loading="lazy" />
+        <div class="property-overlay"></div>
+        <div class="property-tag">Gurugram · Skyline View</div>
+      </div>
+      <div class="property-info">
+        <div class="property-price">AED 4.2 M</div>
+        <div class="property-name">Marina Sky Suites</div>
+        <div class="property-location">Gurugram</div>
+        <div class="property-specs">
+          <span class="property-spec"><strong>3</strong> BHK</span>
+          <span class="property-spec"><strong>2,800</strong> sq.ft</span>
+          <span class="property-spec"><strong>Sea</strong> View</span>
+        </div>
+      </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="property-card reveal reveal-delay-1" data-cat="ready">
+      <div class="property-img-wrap">
+        <img class="property-img" src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=700&q=80" alt="Heritage Residences" loading="lazy" />
+        <div class="property-overlay"></div>
+        <div class="property-tag">Ready to Move</div>
+      </div>
+      <div class="property-info">
+        <div class="property-price">₹ 6.5 Cr</div>
+        <div class="property-name">Heritage Grove</div>
+        <div class="property-location">Greater Kailash II, Delhi</div>
+        <div class="property-specs">
+          <span class="property-spec"><strong>4</strong> BHK</span>
+          <span class="property-spec"><strong>4,100</strong> sq.ft</span>
+          <span class="property-spec"><strong>Ground</strong> Floor</span>
+        </div>
+      </div>
+    </div>
+    <!-- Card 5 -->
+    <div class="property-card reveal reveal-delay-2" data-cat="new">
+      <div class="property-img-wrap">
+        <img class="property-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Prestige Towers" loading="lazy" />
+        <div class="property-overlay"></div>
+        <div class="property-tag">New Launch · Pre-launch Offer</div>
+      </div>
+      <div class="property-info">
+        <div class="property-price">₹ 11.9 Cr</div>
+        <div class="property-name">Prestige Horizon</div>
+        <div class="property-location">Koramangala, Gurugram</div>
+        <div class="property-specs">
+          <span class="property-spec"><strong>4 & 5</strong> BHK</span>
+          <span class="property-spec"><strong>4,800</strong> sq.ft</span>
+          <span class="property-spec"><strong>Club</strong> Access</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="view-all-strip">
+    <a href="#contact" class="btn-ghost">View all 500+ properties</a>
+  </div>
+</section>
+
+<!-- ─── FEATURES ─── -->
+<section class="features" id="features">
+  <div class="features-inner">
+    <div class="features-sticky">
+      <div class="section-eyebrow reveal">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Why Kedar Estate?</span>
+      </div>
+      <h2 class="section-title reveal reveal-delay-1">The Kedar Estate<br><em>Difference</em></h2>
+      <p class="features-body reveal reveal-delay-2">Not all luxury brokerages are equal. Our model is built on radical transparency, white-glove advisory, and a network forged over 18 years in India's most premium micro-markets.</p>
+      <a href="#contact" class="btn-primary reveal reveal-delay-3">Talk to an Advisor</a>
+      <img
+        class="features-img reveal"
+        src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=700&q=80"
+        alt="Modern luxury apartment interior"
+        loading="lazy"
+      />
+    </div>
+    <div class="features-grid">
+      <div class="feature-item reveal">
+        <div class="feature-icon">◈</div>
+        <div class="feature-title">Transparent Transactions</div>
+        <p class="feature-desc">Every fee, every commission, every clause — disclosed upfront. No hidden costs. No fine print surprises. Just clean, documented dealings from enquiry to registry.</p>
+      </div>
+      <div class="feature-item reveal reveal-delay-1">
+        <div class="feature-icon">⬡</div>
+        <div class="feature-title">Developer Network</div>
+        <p class="feature-desc">40+ vetted premium developers give our clients first access to pre-launch pricing, priority allocations, and units not available on the open market.</p>
+      </div>
+      <div class="feature-item reveal reveal-delay-2">
+        <div class="feature-icon">◎</div>
+        <div class="feature-title">End-to-End Concierge</div>
+        <p class="feature-desc">From the initial site visit to interior design referrals and NRI compliance, we handle every touchpoint. Your dedicated relationship manager is available 7 days a week.</p>
+      </div>
+      <div class="feature-item reveal reveal-delay-3">
+        <div class="feature-icon">⬜</div>
+        <div class="feature-title">Deep Market Intelligence</div>
+        <p class="feature-desc">Proprietary pricing data across 200+ micro-locations. Our quarterly reports give you insights that institutional investors pay for — available free to all clients.</p>
+      </div>
+      <div class="feature-item reveal">
+        <div class="feature-icon">◇</div>
+        <div class="feature-title">Legal Due Diligence</div>
+        <p class="feature-desc">In-house legal team reviews every RERA registration, encumbrance certificate, and title chain. We've never had a client face a legal dispute post-purchase.</p>
+      </div>
+      <div class="feature-item reveal reveal-delay-1">
+        <div class="feature-icon">△</div>
+        <div class="feature-title">Investment Return Focus</div>
+        <p class="feature-desc">Our advisors are incentivised on your long-term satisfaction, not the commission. Every recommendation is benchmarked against 5-year return projections.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LOCATIONS ─── -->
+<section class="locations" id="locations">
+  <div class="locations-header">
+    <div>
+      <div class="section-eyebrow reveal">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Where We Operate</span>
+      </div>
+      <h2 class="section-title reveal reveal-delay-1">Prime <em>Locations</em></h2>
+    </div>
+    <a href="#contact" class="btn-ghost reveal">All markets</a>
+  </div>
+  <div class="locations-grid">
+    <div class="location-card reveal">
+      <img class="location-img" src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&q=80" alt="Gurgaon skyline" loading="lazy" />
+      <div class="location-overlay"></div>
+      <div class="location-info">
+        <div class="location-city">Gurgaon</div>
+        <div class="location-count">142 Active Listings</div>
+      </div>
+      <div class="location-arrow">→</div>
+    </div>
+    <div class="location-card reveal reveal-delay-1">
+      <img class="location-img" src="https://images.unsplash.com/photo-1592549585866-486f41c9b16e?w=600&q=80" alt="Mumbai skyline" loading="lazy" />
+      <div class="location-overlay"></div>
+      <div class="location-info">
+        <div class="location-city">Mumbai</div>
+        <div class="location-count">89 Active Listings</div>
+      </div>
+      <div class="location-arrow">→</div>
+    </div>
+    <div class="location-card reveal reveal-delay-2">
+      <img class="location-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Gurugram" loading="lazy" />
+      <div class="location-overlay"></div>
+      <div class="location-info">
+        <div class="location-city">Gurugram</div>
+        <div class="location-count">74 Active Listings</div>
+      </div>
+      <div class="location-arrow">→</div>
+    </div>
+    <div class="location-card reveal reveal-delay-3">
+      <img class="location-img" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="Gurugram" loading="lazy" />
+      <div class="location-overlay"></div>
+      <div class="location-info">
+        <div class="location-city">Gurugram</div>
+        <div class="location-count">68 Active Listings</div>
+      </div>
+      <div class="location-arrow">→</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESS ─── -->
+<section class="process">
+  <div class="section-eyebrow reveal">
+    <div class="eyebrow-line"></div>
+    <span class="eyebrow-text">How It Works</span>
+  </div>
+  <h2 class="section-title reveal reveal-delay-1" style="margin-bottom: 0;">From Enquiry to <em>Keys</em></h2>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="process-num">01</div>
+      <div class="process-icon-ring">◎</div>
+      <div class="process-step-title">Discovery Call</div>
+      <p class="process-step-desc">A 30-minute advisory session to understand your lifestyle, investment objectives, timeline, and budget. No pressure, no sales pitch.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-1">
+      <div class="process-num">02</div>
+      <div class="process-icon-ring">◈</div>
+      <div class="process-step-title">Curated Shortlist</div>
+      <p class="process-step-desc">Within 48 hours, we present 5–8 handpicked options with comparative analytics, neighbourhood data, and our honest recommendation.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="process-num">03</div>
+      <div class="process-icon-ring">⬡</div>
+      <div class="process-step-title">Site Visits & Due Diligence</div>
+      <p class="process-step-desc">Private viewings with our advisor present. Followed by full legal, structural, and financial due diligence on your chosen property.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="process-num">04</div>
+      <div class="process-icon-ring">△</div>
+      <div class="process-step-title">Close & Beyond</div>
+      <p class="process-step-desc">We negotiate on your behalf, handle all paperwork, and remain your single point of contact from booking to possession and beyond.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials" id="testimonials">
+  <div class="section-eyebrow reveal">
+    <div class="eyebrow-line"></div>
+    <span class="eyebrow-text">Client Stories</span>
+  </div>
+  <h2 class="section-title reveal reveal-delay-1">Words That<br><em>Mean Everything</em></h2>
+  <div class="testimonials-inner">
+    <div class="testimonial-card reveal">
+      <div class="testimonial-rating">
+        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+      </div>
+      <span class="testimonial-quote-mark">"</span>
+      <p class="testimonial-text">Kedar Estate found us a property in Gurgaon we didn't even know was available. Their access to pre-launch inventory and the way they walked us through every legal document gave us complete confidence.</p>
+      <div class="testimonial-divider"></div>
+      <div class="testimonial-author">Rohit & Priya Mehta</div>
+      <div class="testimonial-role">Technology Executive · Gurgaon</div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-1">
+      <div class="testimonial-rating">
+        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+      </div>
+      <span class="testimonial-quote-mark">"</span>
+      <p class="testimonial-text">As an NRI investor, I was worried about managing a purchase from abroad. Kedar Estate's team managed absolutely everything — from site visits to registration — and I never once felt out of the loop.</p>
+      <div class="testimonial-divider"></div>
+      <div class="testimonial-author">Ananya Krishnaswamy</div>
+      <div class="testimonial-role">NRI Investor · Singapore</div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2">
+      <div class="testimonial-rating">
+        <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+      </div>
+      <span class="testimonial-quote-mark">"</span>
+      <p class="testimonial-text">The return on my Gurugram villa in 18 months exceeded every projection. Their market intelligence is genuinely superior to anything I've encountered in two decades of property investing.</p>
+      <div class="testimonial-divider"></div>
+      <div class="testimonial-author">Vikram Singhania</div>
+      <div class="testimonial-role">Entrepreneur · Mumbai & Gurugram</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<div class="cta-section" id="contact">
+  <div class="cta-bg"></div>
+  <div class="cta-inner">
+    <div>
+      <div class="section-eyebrow reveal">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Begin Your Journey</span>
+      </div>
+      <h2 class="cta-title reveal reveal-delay-1">Your <em>Dream</em><br>Residence Awaits</h2>
+      <p class="features-body reveal reveal-delay-2" style="margin-top: 20px; max-width: 340px;">Speak with a dedicated Kedar Estate advisor. No obligation, no pressure — just informed guidance from India's most trusted luxury real estate consultancy.</p>
+    </div>
+    <div class="cta-form reveal reveal-delay-2">
+      <div class="form-row">
+        <input class="form-input" type="text" placeholder="Your Full Name" />
+        <input class="form-input" type="tel" placeholder="Mobile Number" />
+      </div>
+      <input class="form-input" type="email" placeholder="Email Address" />
+      <div class="form-row">
+        <select class="form-input">
+          <option value="">Preferred City</option>
+          <option>Gurgaon</option>
+          <option>Noida</option>
+          <option>Delhi</option>
+        </select>
+        <select class="form-input">
+          <option value="">Budget Range</option>
+          <option>₹3–6 Crore</option>
+          <option>₹6–12 Crore</option>
+          <option>₹12–25 Crore</option>
+          <option>₹25 Crore+</option>
+        </select>
+      </div>
+      <button class="form-submit" onclick="handleSubmit(this)">Request a Callback</button>
+      <div class="cta-assurance">
+        <div class="cta-assurance-dot"></div>
+        Callback guaranteed within 60 minutes during business hours
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Kedar<span>·</span>Estate</div>
+      <p class="footer-tagline">India's most trusted luxury real estate advisory. Serving discerning buyers and investors since 2006 across Delhi NCR.</p>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Call</span>
+        <span>+91 98107 44210</span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Mail</span>
+        <span>advisors@kedarestates.in</span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Office</span>
+        <span>Unit 304, DLF Cyber Hub, Sector 24,<br>Gurgaon — 122 002, Haryana</span>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Properties</div>
+      <ul class="footer-links">
+        <li><a href="#">Ready to Move</a></li>
+        <li><a href="#">New Launches</a></li>
+        <li><a href="#">Under Construction</a></li>
+        <li><a href="#">Luxury Villas</a></li>
+        <li><a href="#">Penthouses</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Markets</div>
+      <ul class="footer-links">
+        <li><a href="#">Gurgaon</a></li>
+        <li><a href="#">Noida & Greater Noida</a></li>
+        <li><a href="#">South Delhi</a></li>
+        <li><a href="#">Mumbai & Pune</a></li>
+        <li><a href="#">Gurugram</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#">Insights & Reports</a></li>
+        <li><a href="#">Developer Partners</a></li>
+        <li><a href="#">NRI Services</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>
+      <div class="footer-legal">© 2006–2025 Kedar Estate & Investments Pvt. Ltd. · All Rights Reserved · <a href="#" style="color: inherit;">Privacy Policy</a> · <a href="#" style="color: inherit;">Terms</a></div>
+      <div class="rera-strip">Haryana RERA: HRERA-GGM/128/2024</div>
+    </div>
+    <div class="footer-socials">
+      <a href="#" class="social-link">in</a>
+      <a href="#" class="social-link">ig</a>
+      <a href="#" class="social-link">yt</a>
+      <a href="#" class="social-link">fb</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ─── NAV SCROLL EFFECT ───
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // ─── SCROLL REVEAL ───
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // ─── PROPERTY FILTER ───
+  function filterProps(btn, cat) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.property-card').forEach(card => {
+      const cardCat = card.dataset.cat;
+      card.style.opacity = (cat === 'all' || cardCat === cat) ? '1' : '0.3';
+      card.style.pointerEvents = (cat === 'all' || cardCat === cat) ? 'auto' : 'none';
+    });
+  }
+
+  // ─── FORM SUBMIT ───
+  function handleSubmit(btn) {
+    const original = btn.textContent;
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = '✓ We\'ll call you shortly';
+      btn.style.background = '#3a7d44';
+      btn.style.color = '#fff';
+    }, 1200);
+  }
+
+  // ─── SMOOTH ANCHOR ───
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
